@@ -655,6 +655,16 @@
       "settings": {
         "foreground": "#E03C8A"
       }
+		},
+		{
+			"name": "@override",
+      "scope": [
+        "storage.type.annotation"
+      ],
+      "settings": {
+				"foreground": "#00ff88",
+				"fontStyle": "italic",
+      }
     },
     {
       "scope": [

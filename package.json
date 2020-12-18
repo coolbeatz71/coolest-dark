@@ -1,7 +1,7 @@
 {
     "name": "coolest-dark",
     "displayName": "coolest-dark",
-    "description": "The coolest dark theme based on One Dark Pro and Bear Theme ",
+    "description": "The coolest dark theme based on One Dark Pro and Bear Theme",
     "version": "0.0.1",
     "engines": {
         "vscode": "^1.52.0"
