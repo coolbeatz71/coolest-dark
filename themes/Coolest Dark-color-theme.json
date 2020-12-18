@@ -69,7 +69,7 @@
     // tab
     "tab.activeBackground": "#30395d",
     "tab.activeForeground": "#bcb28d",
-    "tab.inactiveBackground": "#212121",
+    "tab.inactiveBackground": "#2a2f44",
     "tab.activeBorder": "#E6844F",
     "tab.inactiveForeground": "#bcb28d66",
     "tab.hoverBackground": "#282b31",
@@ -105,7 +105,7 @@
     "list.inactiveFocusBackground": "#243d46",
 
     // editorGroupHeader
-    "editorGroupHeader.tabsBackground": "#212121",
+    "editorGroupHeader.tabsBackground": "#24293b",
 
     // editorWidget
     "editorWidget.border": "#555",
