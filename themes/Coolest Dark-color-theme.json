@@ -454,14 +454,13 @@
         "support.constant.handlebars"
       ],
       "settings": {
-        "foreground": "#58B2DC"
+        "foreground": "#9b5de5"
       }
     },
     {
       "name": "Types declaration and references",
       "scope": [
         "meta.return-type",
-        "support.class",
         "support.type",
         "entity.name.type",
         "entity.name.class",
@@ -549,7 +548,6 @@
     },
     {
       "scope": [
-        "support.class",
         "variable",
         "entity.name.type",
         "entity.other.inherited-class",
@@ -558,6 +556,20 @@
       ],
       "settings": {
         "foreground": "#E6844F"
+      }
+		},
+		{
+      "scope": ["support.class"],
+      "settings": {
+        "foreground": "#ec6c45"
+      }
+		},
+		{
+			"name": "class",
+      "scope": ["keyword.declaration"],
+      "settings": {
+				"foreground": "#ff2b72",
+				"fontStyle": "italic bold",
       }
     },
     {
@@ -586,7 +598,7 @@
     {
       "scope": "keyword.operator.new",
       "settings": {
-        "foreground": "#E03C8A",
+        "foreground": "#49f59f",
         "fontStyle": "italic"
       }
     },
