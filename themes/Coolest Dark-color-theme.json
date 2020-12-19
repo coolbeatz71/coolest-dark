@@ -694,7 +694,7 @@
 		{
 			"name": "@override",
       "scope": [
-        "storage.type.annotation"
+        "storage.type.annotation.dart"
       ],
       "settings": {
 				"foreground": "#00e676",
