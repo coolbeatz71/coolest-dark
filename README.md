@@ -22,3 +22,4 @@ The coolest dark theme for Dart and Flutter based on [One Dark Pro](https://mark
 Open a [Issue](https://github.com/coolbeatz71/coolest-dark/issues) or a [Pull Request](https://github.com/coolbeatz71/coolest-dark)
 
 **Enjoy!**
+
