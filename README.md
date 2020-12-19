@@ -5,11 +5,11 @@ The coolest dark theme for Dart and Flutter based on [One Dark Pro](https://mark
 
 #### The theme
 
-https://github.com/coolbeatz71/coolest-dark/raw/master/img/screenshot.png
+![theme](https://github.com/coolbeatz71/coolest-dark/raw/master/img/screenshot.png)
 
 #### The color scheme
 
-https://github.com/coolbeatz71/coolest-dark/raw/master/img/screenshot-scheme.png
+![color-scheme](https://github.com/coolbeatz71/coolest-dark/raw/master/img/screenshot-scheme.png)
 
 ### To install
 
@@ -22,3 +22,4 @@ https://github.com/coolbeatz71/coolest-dark/raw/master/img/screenshot-scheme.png
 Open a [Issue](https://github.com/coolbeatz71/coolest-dark/issues) or a [Pull Request](https://github.com/coolbeatz71/coolest-dark)
 
 **Enjoy!**
+
