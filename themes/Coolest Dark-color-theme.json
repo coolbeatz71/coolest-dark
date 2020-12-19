@@ -3,13 +3,13 @@
     // base
     "focusBorder": "#1F2335",
     "foreground": "#bcb28d",
-    "selection.background": "#58b2dc",
+    "selection.background": "#40c4ff",
     "descriptionForeground": "#bcb28d",
 		"errorForeground": "#E03C8A",
 
     // terminal
-    "terminal.ansiBlue": "#58b2dc",
-    "terminal.ansiBrightBlue": "#58b2dc",
+    "terminal.ansiBlue": "#40c4ff",
+    "terminal.ansiBrightBlue": "#40c4ff",
     "terminal.ansiRed": "#E03C8A",
     "terminal.ansiBrightRed": "#e6844f",
     "terminal.ansiYellow": "#e6844f",
@@ -150,7 +150,7 @@
     {
       "scope": "constant.language",
       "settings": {
-        "foreground": "#58b2dc"
+        "foreground": "#40c4ff"
       }
     },
     {
@@ -222,7 +222,7 @@
       "scope": "markup.bold",
       "settings": {
         "fontStyle": "bold",
-        "foreground": "#58b2dc"
+        "foreground": "#40c4ff"
       }
     },
     {
@@ -253,7 +253,7 @@
     {
       "scope": "markup.changed",
       "settings": {
-        "foreground": "#58b2dc"
+        "foreground": "#40c4ff"
       }
     },
     {
@@ -290,7 +290,7 @@
     {
       "scope": "meta.preprocessor",
       "settings": {
-        "foreground": "#58b2dc"
+        "foreground": "#40c4ff"
       }
     },
     {
@@ -309,13 +309,13 @@
     {
       "scope": "meta.diff.header",
       "settings": {
-        "foreground": "#58b2dc"
+        "foreground": "#40c4ff"
       }
     },
     {
       "scope": "storage",
       "settings": {
-        "foreground": "#58b2dc"
+        "foreground": "#40c4ff"
       }
     },
     {
@@ -327,7 +327,7 @@
     {
       "scope": "storage.modifier",
       "settings": {
-        "foreground": "#58b2dc"
+        "foreground": "#00aeff"
       }
     },
     {
@@ -363,7 +363,7 @@
         "punctuation.definition.template-expression.end.js"
       ],
       "settings": {
-        "foreground": "#58b2dc"
+        "foreground": "#40c4ff"
       }
     },
     {
@@ -397,7 +397,7 @@
         "keyword.operator.sizeof"
       ],
       "settings": {
-        "foreground": "#58b2dc"
+        "foreground": "#40c4ff"
       }
     },
     {
@@ -412,7 +412,7 @@
         "punctuation.section.embedded.end.php"
       ],
       "settings": {
-        "foreground": "#58b2dc"
+        "foreground": "#40c4ff"
       }
     },
     {
@@ -427,6 +427,13 @@
         "foreground": "#b5cea8"
       }
     },
+    {
+      "scope": "keyword.other.import.dart",
+      "settings": {
+        "foreground": "#ff4081"
+      }
+    },
+    
     {
       "name": "coloring of the Java import and package identifiers",
       "scope": [
@@ -454,7 +461,7 @@
         "support.constant.handlebars"
       ],
       "settings": {
-        "foreground": "#9b5de5"
+        "foreground": "#ce7dfd"
       }
     },
     {
@@ -484,7 +491,7 @@
         "storage.type.primitive.groovy"
       ],
       "settings": {
-        "foreground": "#58B2DC"
+        "foreground": "#40c4ff"
       }
     },
     {
@@ -504,7 +511,14 @@
     {
       "scope": "keyword.control",
       "settings": {
-        "foreground": "#58B2DC",
+        "foreground": "#40c4ff",
+        "fontStyle": ""
+      }
+    },
+    {
+      "scope": "keyword.control.import",
+      "settings": {
+        "foreground": "#ff4081",
         "fontStyle": ""
       }
     },
@@ -529,6 +543,15 @@
       ],
       "settings": {
         "foreground": "#E6844F"
+      }
+    },
+    {
+      "scope": [
+        "entity.other.attribute-name",
+        "meta.tag.attributes",
+      ],
+      "settings": {
+        "foreground": "#fb8c00"
       }
     },
     {
@@ -559,14 +582,14 @@
       }
 		},
 		{
-      "scope": ["support.class"],
+      "scope": ["support.class.dart"],
       "settings": {
         "foreground": "#ec6c45"
       }
 		},
 		{
 			"name": "class",
-      "scope": ["keyword.declaration"],
+      "scope": ["keyword.declaration.dart"],
       "settings": {
 				"foreground": "#ff2b72",
 				"fontStyle": "italic bold",
@@ -581,7 +604,7 @@
     {
       "scope": ["keyword.control"],
       "settings": {
-        "foreground": "#58b2dc"
+        "foreground": "#40c4ff"
       }
     },
     {
@@ -611,7 +634,7 @@
     {
       "scope": ["markup.underline.link.markdown"],
       "settings": {
-        "foreground": "#58b2dc"
+        "foreground": "#40c4ff"
       }
     },
     {
@@ -644,7 +667,7 @@
         "entity.other.inherited-class.python"
       ],
       "settings": {
-        "foreground": "#58b2dc"
+        "foreground": "#40c4ff"
       }
     },
     {
@@ -674,7 +697,7 @@
         "storage.type.annotation"
       ],
       "settings": {
-				"foreground": "#00ff88",
+				"foreground": "#00e676",
 				"fontStyle": "italic",
       }
     },
