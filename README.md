@@ -1,6 +1,6 @@
 # Cooler Dark
 
-The coolest dark theme for Dart and Flutter based on [One Dark Pro](https://marketplace.visualstudio.com/items?itemName=zhuangtongfa.Material-theme) and [Bear Theme](https://marketplace.visualstudio.com/items?itemName=dahong.theme-bear) theme extension
+The coolest dark theme for Dart and Flutter based on [One Dark Pro](https://marketplace.visualstudio.com/items?itemName=zhuangtongfa.Material-theme) and [Bear Theme](https://marketplace.visualstudio.com/items?itemName=dahong.theme-bear)
 
 ### Screenshot
 
