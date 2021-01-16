@@ -68,9 +68,9 @@
 
     // tab
     "tab.activeBackground": "#30395d",
-    "tab.activeForeground": "#bcb28d",
+    "tab.activeForeground": "#ec6c45",
     "tab.inactiveBackground": "#2a2f44",
-    "tab.activeBorder": "#E6844F",
+    "tab.activeBorder": "#ec6c45",
     "tab.inactiveForeground": "#bcb28d66",
     "tab.hoverBackground": "#282b31",
     "tab.border": "#31333b",
@@ -81,8 +81,10 @@
     // activityBar
     "activityBar.background": "#20253a",
     "activityBar.border": "#31333b",
-    "activityBar.foreground": "#bcb28d",
+    "activityBar.foreground": "#ec6c45",
     "activityBarBadge.background": "#424852",
+    "activityBar.activeBorder": "#ec6c45",
+    "activityBar.inactiveForeground": "#bcb28d",
 
     // titleBar
     "titleBar.activeBackground": "#1F2335",
