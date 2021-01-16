@@ -8,9 +8,21 @@ The coolest dark theme for Dart and Flutter based on [One Dark Pro](https://mark
 
 ![theme](https://github.com/coolbeatz71/coolest-dark/raw/master/img/screenshot.png)
 
-#### The color scheme
+#### Dart/Flutter
 
-![color-scheme](https://github.com/coolbeatz71/coolest-dark/raw/master/img/screenshot-scheme.png)
+![color-scheme](https://github.com/coolbeatz71/coolest-dark/raw/master/img/code-flutter.png)
+
+#### Javascript/React
+
+![color-scheme](https://github.com/coolbeatz71/coolest-dark/raw/master/img/code.png)
+
+#### HTML
+
+![color-scheme](https://github.com/coolbeatz71/coolest-dark/raw/master/img/code-html.png)
+
+#### Stylesheet/CSS/SCSS
+
+![color-scheme](https://github.com/coolbeatz71/coolest-dark/raw/master/img/code-css.png)
 
 ### To install
 
