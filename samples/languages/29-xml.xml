@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  XML language tour.
+  Covers declarations, namespaces, attributes, CDATA,
+  processing instructions, entities and comments.
+-->
+<?xml-stylesheet type="text/xsl" href="transform.xsl"?>
+<!DOCTYPE configuration [
+  <!ENTITY product "Coolest Dark">
+  <!ENTITY version "0.1.0">
+]>
+<configuration
+    xmlns="urn:languagetour:config"
+    xmlns:log="urn:languagetour:logging"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="urn:languagetour:config config.xsd"
+    version="&version;">
+
+  <metadata>
+    <name>&product;</name>
+    <description xml:lang="en">A dark theme for &product;.</description>
+    <updated>2026-10-04T12:30:00Z</updated>
+  </metadata>
+
+  <!-- Severity lookup -->
+  <log:severities default="info">
+    <log:severity id="1" name="debug"   severe="false" />
+    <log:severity id="2" name="info"    severe="false" />
+    <log:severity id="3" name="warning" severe="true"  />
+    <log:severity id="4" name="error"   severe="true"  />
+  </log:severities>
+
+  <log:appender name="console" class="org.example.ConsoleAppender">
+    <log:param name="target" value="System.out" />
+    <log:layout>
+      <log:pattern><![CDATA[
+        [%severity] %message (%tags{count} tags)
+        if (count > 100 && severity == "error") { mark("busy"); }
+      ]]></log:pattern>
+    </log:layout>
+  </log:appender>
+
+  <entries count="2">
+    <entry id="1" severity="error">
+      <message>Something broke</message>
+      <tags>
+        <tag>urgent</tag>
+        <tag>backend</tag>
+      </tags>
+    </entry>
+    <entry id="2" severity="info">
+      <message>All clear &amp; healthy</message>
+      <tags />
+    </entry>
+  </entries>
+</configuration>
