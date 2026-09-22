@@ -1,0 +1,20 @@
+{
+  "scopeName": "css.custom-properties.injection",
+  "injectionSelector": "L:source.css -comment -string, L:source.css.scss -comment -string, L:source.css.less -comment -string",
+  "patterns": [
+    {
+      "include": "#custom-property"
+    }
+  ],
+  "repository": {
+    "custom-property": {
+      "comment": "Only the custom property INSIDE var(...) - not the declaration key. CSS tags that argument variable.argument.css, but SCSS and LESS reuse the plain variable scope for both, so a lookbehind on 'var(' is the only way to separate them there.",
+      "match": "(?<=\\bvar\\()\\s*(--[A-Za-z_][A-Za-z0-9_-]*)",
+      "captures": {
+        "1": {
+          "name": "variable.css.custom-property"
+        }
+      }
+    }
+  }
+}
