@@ -1,0 +1,44 @@
+{
+  "scopeName": "swift.argument-labels.injection",
+  "injectionSelector": "L:source.swift -comment",
+  "patterns": [
+    {
+      "include": "#modifier-call"
+    },
+    {
+      "include": "#argument-label"
+    },
+    {
+      "include": "#object-reference"
+    }
+  ],
+  "repository": {
+    "argument-label": {
+      "comment": "Swift's grammar scopes an argument label (alignment:, spacing:, systemImage:) as support.function.any-method.swift - the very same scope it gives the call itself (VStack, Text). Only position tells them apart: a label sits after '(' or ',' and before ':'.",
+      "match": "(?<=[(,])\\s*([a-z_][A-Za-z0-9_]*)\\s*(?=:)",
+      "captures": {
+        "1": {
+          "name": "variable.parameter.label.swift"
+        }
+      }
+    },
+    "object-reference": {
+      "comment": "Capitalised head of a member chain (Color.red, Task.sleep) - matches the Kotlin/Flutter treatment.",
+      "match": "\\b([A-Z][A-Za-z0-9_]*)(?=\\.)",
+      "captures": {
+        "1": {
+          "name": "entity.name.type.object-ref.swift"
+        }
+      }
+    },
+    "modifier-call": {
+      "comment": "SwiftUI modifiers (.padding, .font, .background) and view constructors (HStack, Text) share the scope support.function.any-method.swift. A modifier is preceded by a dot; a constructor is not.",
+      "match": "(?<=\\.)([a-z_][A-Za-z0-9_]*)(?=\\s*\\()",
+      "captures": {
+        "1": {
+          "name": "entity.name.function.modifier.swift"
+        }
+      }
+    }
+  }
+}
