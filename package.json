@@ -20,14 +20,173 @@
         "flutter", "dark", "coolest", "dart", "theme", "material theme", "One dark", "Bear Theme"
     ],
     "description": "The coolest dark theme for Dart and Flutter based on One Dark Pro and Bear Theme",
-    "version": "0.0.1",
+    "version": "0.1.65",
     "engines": {
-        "vscode": "^1.52.0"
+        "vscode": "^1.75.0"
     },
     "categories": [
         "Themes"
     ],
     "contributes": {
+        "grammars": [
+            {
+                "scopeName": "dart.generics.injection",
+                "path": "./syntaxes/dart-generics.injection.json",
+                "injectTo": [
+                    "source.dart"
+                ]
+            },
+            {
+                "scopeName": "elixir.modules.injection",
+                "path": "./syntaxes/elixir-modules.injection.json",
+                "injectTo": [
+                    "source.elixir"
+                ]
+            },
+            {
+                "scopeName": "css.custom-properties.injection",
+                "path": "./syntaxes/css-custom-properties.injection.json",
+                "injectTo": [
+                    "source.css",
+                    "source.css.scss",
+                    "source.css.less"
+                ]
+            },
+            {
+                "scopeName": "rust.members.injection",
+                "path": "./syntaxes/rust-members.injection.json",
+                "injectTo": [
+                    "source.rust"
+                ]
+            },
+            {
+                "scopeName": "typescript.bare-calls.injection",
+                "path": "./syntaxes/typescript-bare-calls.injection.json",
+                "injectTo": [
+                    "source.ts",
+                    "source.tsx"
+                ]
+            },
+            {
+                "scopeName": "go.members.injection",
+                "path": "./syntaxes/go-members.injection.json",
+                "injectTo": [
+                    "source.go"
+                ]
+            },
+            {
+                "scopeName": "python.assignment.injection",
+                "path": "./syntaxes/python-assignment.injection.json",
+                "injectTo": [
+                    "source.python"
+                ]
+            },
+            {
+                "scopeName": "swift.argument-labels.injection",
+                "path": "./syntaxes/swift-argument-labels.injection.json",
+                "injectTo": [
+                    "source.swift"
+                ]
+            },
+            {
+                "scopeName": "kotlin.arguments.injection",
+                "path": "./syntaxes/kotlin-arguments.injection.json",
+                "injectTo": [
+                    "source.kotlin"
+                ]
+            },
+            {
+                "scopeName": "java.declaration-keywords.injection",
+                "path": "./syntaxes/java-declaration.injection.json",
+                "injectTo": [
+                    "source.java"
+                ]
+            },
+            {
+                "scopeName": "groovy.method-calls.injection",
+                "path": "./syntaxes/groovy-method-calls.injection.json",
+                "injectTo": [
+                    "source.groovy"
+                ]
+            },
+            {
+                "scopeName": "lua.function-keyword.injection",
+                "path": "./syntaxes/lua-function.injection.json",
+                "injectTo": [
+                    "source.lua"
+                ]
+            },
+            {
+                "scopeName": "julia.types.injection",
+                "path": "./syntaxes/julia-types.injection.json",
+                "injectTo": [
+                    "source.julia"
+                ]
+            },
+            {
+                "scopeName": "clojure.types.injection",
+                "path": "./syntaxes/clojure-types.injection.json",
+                "injectTo": [
+                    "source.clojure"
+                ]
+            },
+            {
+                "scopeName": "powershell.enum.injection",
+                "path": "./syntaxes/powershell-enum.injection.json",
+                "injectTo": [
+                    "source.powershell"
+                ]
+            },
+            {
+                "scopeName": "sql.tables.injection",
+                "path": "./syntaxes/sql-tables.injection.json",
+                "injectTo": [
+                    "source.sql"
+                ]
+            },
+            {
+                "scopeName": "rust.generics.injection",
+                "path": "./syntaxes/rust-generics.injection.json",
+                "injectTo": [
+                    "source.rust"
+                ]
+            },
+            {
+                "scopeName": "kotlin.generics.injection",
+                "path": "./syntaxes/kotlin-generics.injection.json",
+                "injectTo": [
+                    "source.kotlin"
+                ]
+            },
+            {
+                "scopeName": "swift.parameter-types.injection",
+                "path": "./syntaxes/swift-parameter-types.injection.json",
+                "injectTo": [
+                    "source.swift"
+                ]
+            },
+            {
+                "scopeName": "swift.result-types.injection",
+                "path": "./syntaxes/swift-result-types.injection.json",
+                "injectTo": [
+                    "source.swift"
+                ]
+            },
+            {
+                "scopeName": "csharp.parameter-types.injection",
+                "path": "./syntaxes/csharp-parameter-types.injection.json",
+                "injectTo": [
+                    "source.cs"
+                ]
+            },
+            {
+                "scopeName": "csharp.initializer-values.injection",
+                "path": "./syntaxes/csharp-initializer-values.injection.json",
+                "injectTo": [
+                    "source.cs"
+                ]
+            }
+        ],
         "themes": [
             {
                 "label": "Coolest Dark",
