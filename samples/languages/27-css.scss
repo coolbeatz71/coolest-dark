@@ -1,0 +1,85 @@
+// =============================================================
+// SCSS language tour
+//
+// Covers variables, nesting, mixins, functions, maps, loops,
+// placeholders, media queries and custom properties.
+// =============================================================
+
+@use "sass:map";
+@use "sass:color";
+
+/// Severity palette.
+/// @type Map
+$severities: (
+  "debug": #707c74,
+  "info": #58b2dc,
+  "warning": #e6844f,
+  "error": #e03c8a,
+);
+
+$radius: 12px !default;
+$breakpoints: ("sm": 480px, "md": 768px, "lg": 1200px);
+
+:root {
+  --fg: #bcb28d;
+  --bg: #1f2335;
+  --radius: #{$radius};
+}
+
+/// Responds above a named breakpoint.
+/// @param {String} $name - key of $breakpoints
+@mixin above($name) {
+  $size: map.get($breakpoints, $name);
+  @if $size == null {
+    @error "unknown breakpoint: #{$name}";
+  }
+  @media (min-width: $size) {
+    @content;
+  }
+}
+
+@function contrast-on($color) {
+  @return if(color.lightness($color) > 50%, #1f2335, #ffffff);
+}
+
+%card-base {
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  background-color: var(--bg);
+}
+
+.log {
+  @extend %card-base;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: clamp(0.5rem, 2vw, 1.5rem);
+
+  &__entry {
+    color: var(--fg);
+    transition: background-color 150ms ease-in-out; // inline comment
+
+    &:hover,
+    &:focus-visible {
+      background-color: rgba(255 255 255 / 6%);
+    }
+
+    &--compact > .log__message::after {
+      content: "\2026";
+    }
+  }
+
+  @each $name, $color in $severities {
+    &--#{$name} {
+      border-left: 3px solid $color;
+      color: contrast-on($color);
+    }
+  }
+
+  @include above("md") {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@supports (backdrop-filter: blur(4px)) {
+  .log { backdrop-filter: blur(4px); }
+}
