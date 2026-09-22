@@ -1,0 +1,67 @@
+{
+  "scopeName": "python.assignment.injection",
+  "injectionSelector": "L:source.python -comment -string",
+  "patterns": [
+    {
+      "include": "#class-bases"
+    },
+    {
+      "include": "#assignment-target"
+    }
+  ],
+  "repository": {
+    "assignment-target": {
+      "comment": "Python's grammar gives an assignment target no scope - `title = models.CharField(...)` comes back as one plain token, which is why Django model fields render as flat editor foreground. Match the name at the start of a line followed by '=' (not '==', and not a keyword argument, which is never at line start).",
+      "patterns": [
+        {
+          "match": "^\\s*([a-zA-Z_][A-Za-z0-9_]*)\\s*(?==(?!=))",
+          "captures": {
+            "1": {
+              "name": "variable.other.assignment.python"
+            }
+          }
+        },
+        {
+          "match": "^\\s*([a-zA-Z_][A-Za-z0-9_]*)\\s*(?=:\\s*[A-Za-z_\\[])",
+          "captures": {
+            "1": {
+              "name": "variable.other.assignment.python"
+            }
+          }
+        }
+      ]
+    },
+    "class-bases": {
+      "comment": "Python scopes every part of a base-class list as entity.other.inherited-class.python - admin and ModelAdmin are indistinguishable. Match the whole class header and split the qualifier from the base name. `class` and the class name are re-scoped in captures so they keep their own colours.",
+      "match": "^(\\s*)(class)\\s+([A-Za-z_][A-Za-z0-9_]*)\\s*\\(([^)]*)\\)",
+      "captures": {
+        "2": {
+          "name": "storage.type.class.python"
+        },
+        "3": {
+          "name": "entity.name.type.class.python"
+        },
+        "4": {
+          "patterns": [
+            {
+              "match": "[A-Za-z_][A-Za-z0-9_]*(?=\\s*\\.)",
+              "name": "entity.name.namespace.base.python"
+            },
+            {
+              "match": "(?<=\\.)[A-Za-z_][A-Za-z0-9_]*",
+              "name": "entity.other.inherited-class.member.python"
+            },
+            {
+              "match": "\\[|\\]|,",
+              "name": "punctuation.separator.python"
+            },
+            {
+              "match": "[A-Za-z_][A-Za-z0-9_]*",
+              "name": "entity.other.inherited-class.python"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
