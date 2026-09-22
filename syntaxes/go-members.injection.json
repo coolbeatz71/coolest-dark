@@ -1,0 +1,100 @@
+{
+  "scopeName": "go.members.injection",
+  "injectionSelector": "L:source.go -comment -string",
+  "patterns": [
+    {
+      "include": "#short-declaration"
+    },
+    {
+      "include": "#var-declaration"
+    },
+    {
+      "include": "#struct-literal-key"
+    },
+    {
+      "include": "#member-call"
+    },
+    {
+      "include": "#member-access"
+    },
+    {
+      "include": "#qualifier"
+    },
+    {
+      "include": "#value-identifier"
+    }
+  ],
+  "repository": {
+    "struct-literal-key": {
+      "comment": "Struct literal keys (ID: 1, Title: \"hello\", Addr: \":8080\") are unscoped. They are the Go equivalent of a named argument.",
+      "match": "(?<=[{,])\\s*([A-Za-z_][A-Za-z0-9_]*)\\s*(?=:(?!=))",
+      "captures": {
+        "1": {
+          "name": "variable.parameter.named.go"
+        }
+      }
+    },
+    "member-call": {
+      "comment": "Method calls after a dot (c.JSON, s.mu.RLock, time.Now) carry no scope in Go's grammar.",
+      "match": "(?<=\\.)([A-Za-z_][A-Za-z0-9_]*)(?=\\s*\\()",
+      "captures": {
+        "1": {
+          "name": "entity.name.function.call.go"
+        }
+      }
+    },
+    "member-access": {
+      "comment": "Field and constant access after a dot (c.Request, http.StatusOK, gin.HandlerFunc).",
+      "match": "(?<=\\.)([A-Za-z_][A-Za-z0-9_]*)\\b(?!\\s*\\()",
+      "captures": {
+        "1": {
+          "name": "variable.other.member.go"
+        }
+      }
+    },
+    "qualifier": {
+      "comment": "The head of a selector chain - a package name (slog, http, time) or a receiver (c, s, logger).",
+      "match": "\\b([a-zA-Z_][A-Za-z0-9_]*)(?=\\.[A-Za-z_])",
+      "captures": {
+        "1": {
+          "name": "entity.name.namespace.ref.go"
+        }
+      }
+    },
+    "short-declaration": {
+      "comment": "Go leaves the targets of a short declaration (article, err := ...) completely unscoped. Tag each name in the comma list.",
+      "match": "([A-Za-z_][A-Za-z0-9_]*(?:\\s*,\\s*[A-Za-z_][A-Za-z0-9_]*)*)\\s*(:=)",
+      "captures": {
+        "1": {
+          "patterns": [
+            {
+              "match": "[A-Za-z_][A-Za-z0-9_]*",
+              "name": "variable.other.declaration.go"
+            }
+          ]
+        },
+        "2": {
+          "name": "keyword.operator.assignment.go"
+        }
+      }
+    },
+    "var-declaration": {
+      "comment": "var ErrNotFound = ... / var payload Article - the declared name is unscoped.",
+      "match": "(?<=\\bvar\\s)\\s*([A-Za-z_][A-Za-z0-9_]*)",
+      "captures": {
+        "1": {
+          "name": "variable.other.declaration.go"
+        }
+      }
+    },
+    "value-identifier": {
+      "comment": "Bare identifiers used as values inside a call or list - errors.Is(err, ErrNotFound), signal.Notify(quit, ...). Go scopes none of these. Excludes keywords, builtin types and builtin functions, and anything followed by '.', '(' or ':' so qualifiers, calls and labels keep their own colours.",
+      "match": "(?<=[(,])\\s*(?!(?:chan|func|map|struct|interface|var|const|type|if|else|for|range|return|go|defer|select|case|default|switch|break|continue|fallthrough|goto|package|import|nil|true|false|iota|string|int|int8|int16|int32|int64|uint|uint8|uint16|uint32|uint64|uintptr|byte|rune|float32|float64|complex64|complex128|bool|error|any|comparable|make|new|len|cap|append)\\b)([A-Za-z_][A-Za-z0-9_]*)\\b(?![.(:])",
+      "captures": {
+        "1": {
+          "name": "variable.other.go"
+        }
+      }
+    }
+  }
+}
