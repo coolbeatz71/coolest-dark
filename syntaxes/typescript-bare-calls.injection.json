@@ -1,0 +1,20 @@
+{
+  "scopeName": "typescript.bare-calls.injection",
+  "injectionSelector": "L:source.ts -comment -string, L:source.tsx -comment -string",
+  "patterns": [
+    {
+      "include": "#bare-call"
+    }
+  ],
+  "repository": {
+    "bare-call": {
+      "comment": "TypeScript scopes every callable as entity.name.function.ts, so expect() and .toEqual() are indistinguishable. A bare call has no preceding dot; a method call does. Keywords followed by '(' (if, for, switch, catch) are excluded.",
+      "match": "(?<![.?\\w$])(?!(?:if|for|while|switch|catch|return|typeof|instanceof|void|delete|await|yield|new|in|of|function|class|const|let|var|import|export|from|as|do|else|try|finally|throw|super|this)\\b)([a-zA-Z_$][A-Za-z0-9_$]*)(?=\\s*\\()",
+      "captures": {
+        "1": {
+          "name": "entity.name.function.bare.ts"
+        }
+      }
+    }
+  }
+}
