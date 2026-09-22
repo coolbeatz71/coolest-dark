@@ -1,0 +1,11 @@
+{
+  "scopeName": "swift.parameter-types.injection",
+  "injectionSelector": "L:source.swift meta.parameter-clause -comment -string",
+  "patterns": [
+    {
+      "comment": "Swift's grammar leaves a user-defined type in parameter position unscoped and gives a stdlib one the same support.type as everywhere else, so a parameter type cannot be themed apart from the rest. Scope it by position. Labels, parameter names, async and throws are lowercase by convention and stay with the host.",
+      "match": "\\b[A-Z][A-Za-z0-9_]*\\b",
+      "name": "entity.name.type.parameter.swift"
+    }
+  ]
+}
