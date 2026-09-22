@@ -1,0 +1,53 @@
+{
+  "scopeName": "powershell.enum.injection",
+  "injectionSelector": "L:source.powershell -comment -string",
+  "patterns": [
+    {
+      "include": "#enum-declaration"
+    }
+  ],
+  "repository": {
+    "enum-declaration": {
+      "comment": "VS Code's bundled PowerShell grammar has no rule for `enum` at all - the whole declaration line and every member comes back unscoped, so it renders as plain editor foreground. Scope the keyword, the type name and the members so PowerShell enums match Java/C#/Dart.",
+      "begin": "(?i)\\b(enum)\\s+([A-Za-z_][A-Za-z0-9_]*)\\s*(\\{)",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.declaration.enum.powershell"
+        },
+        "2": {
+          "name": "entity.name.type.enum.powershell"
+        },
+        "3": {
+          "name": "punctuation.section.braces.begin.powershell"
+        }
+      },
+      "end": "\\}",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.section.braces.end.powershell"
+        }
+      },
+      "patterns": [
+        {
+          "include": "source.powershell#comments"
+        },
+        {
+          "match": "^\\s*([A-Za-z_][A-Za-z0-9_]*)\\s*(?=(=|,|$))",
+          "captures": {
+            "1": {
+              "name": "variable.other.enummember.powershell"
+            }
+          }
+        },
+        {
+          "match": "=",
+          "name": "keyword.operator.assignment.powershell"
+        },
+        {
+          "match": "\\b\\d+\\b",
+          "name": "constant.numeric.integer.powershell"
+        }
+      ]
+    }
+  }
+}
