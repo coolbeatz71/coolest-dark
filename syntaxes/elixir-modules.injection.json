@@ -1,0 +1,59 @@
+{
+  "scopeName": "elixir.modules.injection",
+  "injectionSelector": "L:source.elixir -comment -string",
+  "patterns": [
+    {
+      "include": "#alias-after-keyword"
+    },
+    {
+      "include": "#dotted-alias"
+    }
+  ],
+  "repository": {
+    "alias-after-keyword": {
+      "comment": "After defmodule/alias/import/require/use the host grammar captures the whole dotted name as ONE token, so the injection has to start at the keyword to get in front of it.",
+      "match": "\\b(defmodule|defprotocol|defimpl|defstruct|alias|require|import|use)(\\s+)([A-Z][A-Za-z0-9_]*)((?:\\.[A-Z][A-Za-z0-9_]*)+)",
+      "captures": {
+        "1": {
+          "name": "keyword.control.module.elixir"
+        },
+        "3": {
+          "name": "entity.name.type.module.elixir"
+        },
+        "4": {
+          "patterns": [
+            {
+              "match": "\\.",
+              "name": "punctuation.separator.method.elixir"
+            },
+            {
+              "match": "[A-Z][A-Za-z0-9_]*",
+              "name": "entity.name.type.module.nested.elixir"
+            }
+          ]
+        }
+      }
+    },
+    "dotted-alias": {
+      "comment": "Everywhere else: GenServer.start_link, String.t, FrameworkTour.Blog.Article.",
+      "match": "\\b([A-Z][A-Za-z0-9_]*)((?:\\.[A-Z][A-Za-z0-9_]*)+)",
+      "captures": {
+        "1": {
+          "name": "entity.name.type.module.elixir"
+        },
+        "2": {
+          "patterns": [
+            {
+              "match": "\\.",
+              "name": "punctuation.separator.method.elixir"
+            },
+            {
+              "match": "[A-Z][A-Za-z0-9_]*",
+              "name": "entity.name.type.module.nested.elixir"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
