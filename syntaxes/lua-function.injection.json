@@ -1,0 +1,16 @@
+{
+  "scopeName": "lua.function-keyword.injection",
+  "injectionSelector": "L:source.lua -comment -string",
+  "patterns": [
+    {
+      "include": "#function-keyword"
+    }
+  ],
+  "repository": {
+    "function-keyword": {
+      "comment": "Lua's grammar puts `function`, `return` and `end` all under keyword.control.lua, so the theme cannot colour `function` on its own. Give it a dedicated scope.",
+      "match": "\\bfunction\\b",
+      "name": "keyword.declaration.function.lua"
+    }
+  }
+}
