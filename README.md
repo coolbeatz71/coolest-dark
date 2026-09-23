@@ -6,9 +6,11 @@ and [Bear Theme](https://marketplace.visualstudio.com/items?itemName=dahong.them
 and now covers 35 languages and 35 frameworks with the same palette applied
 consistently across all of them.
 
-Types, functions, declaration keywords, annotations, imports and constants read the
-same whether you are in Dart, Java, Rust, Go, Python or TypeScript, so switching
-files does not mean relearning the colours.
+Declaration keywords (`class`, `struct`, `interface`, `enum`, `func`, `fun`,
+`defrecord`) and annotations (`@Override`, `#[derive]`, `@dataclass`, `^:const`)
+use the same colour in every language that has them. Types, functions and imports
+line up across most languages too, with a few deliberate exceptions where a grammar
+makes the distinction impossible or where the language reads better its own way.
 
 ### Screenshots
 
