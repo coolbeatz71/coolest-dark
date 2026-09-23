@@ -6,37 +6,33 @@ and [Bear Theme](https://marketplace.visualstudio.com/items?itemName=dahong.them
 and now covers 35 languages and 35 frameworks with the same palette applied
 consistently across all of them.
 
-Declaration keywords (`class`, `struct`, `interface`, `enum`, `func`, `fun`,
-`defrecord`) and annotations (`@Override`, `#[derive]`, `@dataclass`, `^:const`)
-use the same color in every language that has them. Types, functions and imports
-line up across most languages too, with a few deliberate exceptions where a grammar
-makes the distinction impossible or where the language reads better its own way.
+Declaration keywords and annotations use the same color in every language that has them. Types, functions and imports line up across most languages too, with a few deliberate exceptions where a grammar makes the distinction impossible or where the language reads better its own way.
 
 ## Screenshots
 
 ### Overview
 
-![overview](https://github.com/coolbeatz71/coolest-dark/raw/master/img/code-sample.png)
+![overview](./img/code-sample.png)
 
 ### Flutter and Dart
 
-![flutter](https://github.com/coolbeatz71/coolest-dark/raw/master/img/code-flutter.png)
+![flutter](./img/code-flutter.png)
 
 ### Java
 
-![java](https://github.com/coolbeatz71/coolest-dark/raw/master/img/code-java.png)
+![java](./img/code-java.png)
 
 ### React
 
-![react](https://github.com/coolbeatz71/coolest-dark/raw/master/img/code-react.png)
+![react](./img/code-react.png)
 
 ### HTML
 
-![html](https://github.com/coolbeatz71/coolest-dark/raw/master/img/code-html.png)
+![html](./img/code-html.png)
 
 ### Stylesheets, CSS and SCSS
 
-![css](https://github.com/coolbeatz71/coolest-dark/raw/master/img/code-css.png)
+![css](./img/code-css.png)
 
 ## What makes it different
 
