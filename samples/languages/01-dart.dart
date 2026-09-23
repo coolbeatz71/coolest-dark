@@ -13,7 +13,7 @@ import 'dart:math' as math;
 /// Severity levels for a log line.
 enum Severity { debug, info, warning, error }
 
-/// A mixin contributing timestamp behaviour.
+/// A mixin contributing timestamp behavior.
 mixin Timestamped {
   DateTime get createdAt => DateTime.now();
 }
