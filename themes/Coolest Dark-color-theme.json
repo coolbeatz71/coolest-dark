@@ -119,7 +119,10 @@
     "editorBracketMatch.border": "#886b67",
 
     // git
-    "gitDecoration.ignoredResourceForeground": "#505f55"
+    "gitDecoration.ignoredResourceForeground": "#505f55",
+
+    // dart / flutter
+    "dart.closingLabels": "#bcb28d80"
   },
 	"name": "Coolest Dark",
 	"type": "dark",
