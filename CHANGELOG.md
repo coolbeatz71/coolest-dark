@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## 0.1.65 | September 22, 2026
+## 1.0.0 | September 22, 2026
 
 Coolest Dark was written for Dart and Flutter. Everything else fell through to a
 handful of generic rules, so most languages came out looking washed out, or in a
