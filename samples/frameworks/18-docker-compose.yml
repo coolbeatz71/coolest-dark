@@ -1,0 +1,80 @@
+# =============================================================
+# Docker Compose framework tour
+#
+# Covers services, build contexts, networks, volumes, healthchecks,
+# environment interpolation, depends_on conditions and profiles.
+# =============================================================
+
+x-common-env: &common-env
+  TZ: UTC
+  LOG_LEVEL: ${LOG_LEVEL:-info}
+
+x-restart-policy: &restart-policy
+  restart: unless-stopped
+
+services:
+  api:
+    <<: *restart-policy
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+      args:
+        NODE_VERSION: "22"
+    image: coolest-dark/api:${TAG:-latest}
+    container_name: coolest_api
+    environment:
+      <<: *common-env
+      DATABASE_URL: postgres://app:${DB_PASSWORD:?required}@db:5432/app
+    ports:
+      - "3000:3000"      # host:container
+    depends_on:
+      db:
+        condition: service_healthy
+      cache:
+        condition: service_started
+    networks: [backend, frontend]
+    volumes:
+      - ./src:/app/src:ro
+      - uploads:/app/uploads
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS http://localhost:3000/health || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    deploy:
+      resources:
+        limits: { cpus: "1.0", memory: 512M }
+
+  db:
+    image: postgres:17-alpine
+    <<: *restart-policy
+    environment:
+      POSTGRES_USER: app
+      POSTGRES_PASSWORD: ${DB_PASSWORD:?required}
+      POSTGRES_DB: app
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "app"]
+      interval: 10s
+      retries: 5
+    networks: [backend]
+
+  cache:
+    image: redis:7-alpine
+    command: ["redis-server", "--appendonly", "yes"]
+    networks: [backend]
+    profiles: [full]
+
+networks:
+  backend:
+    driver: bridge
+  frontend:
+    driver: bridge
+
+volumes:
+  pgdata: {}
+  uploads:
+    driver: local
