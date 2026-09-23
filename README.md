@@ -12,27 +12,27 @@ Declaration keywords and annotations use the same color in every language that h
 
 ### Overview
 
-![overview](./img/code-sample.png)
+![overview](https://github.com/coolbeatz71/coolest-dark/raw/master/img/code-sample.png)
 
 ### Flutter and Dart
 
-![flutter](./img/code-flutter.png)
+![flutter](https://github.com/coolbeatz71/coolest-dark/raw/master/img/code-flutter.png)
 
 ### Java
 
-![java](./img/code-java.png)
+![java](https://github.com/coolbeatz71/coolest-dark/raw/master/img/code-java.png)
 
 ### React
 
-![react](./img/code-react.png)
+![react](https://github.com/coolbeatz71/coolest-dark/raw/master/img/code-react.png)
 
 ### HTML
 
-![html](./img/code-html.png)
+![html](https://github.com/coolbeatz71/coolest-dark/raw/master/img/code-html.png)
 
 ### Stylesheets, CSS and SCSS
 
-![css](./img/code-css.png)
+![css](https://github.com/coolbeatz71/coolest-dark/raw/master/img/code-css.png)
 
 ## What makes it different
 
