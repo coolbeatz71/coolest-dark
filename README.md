@@ -22,6 +22,10 @@ Declaration keywords and annotations use the same color in every language that h
 
 ![java](https://github.com/coolbeatz71/coolest-dark/raw/master/img/code-java.png)
 
+### C#
+
+![csharp](https://github.com/coolbeatz71/coolest-dark/raw/master/img/code-csharp.png)
+
 ### React
 
 ![react](https://github.com/coolbeatz71/coolest-dark/raw/master/img/code-react.png)
