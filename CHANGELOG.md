@@ -11,20 +11,27 @@ frameworks, and adds the grammar work needed to make that possible.
 
 Three rules had been narrowed to Dart only (`support.class`, `keyword.declaration`
 and `storage.type.annotation`). They are generic again, so classes, declaration
-keywords and annotations are coloured everywhere. Import and package keywords now
+keywords and annotations are colored everywhere. Import and package keywords now
 have rules for Java, Groovy, JS/TS, Python, PHP, C# and CSS at rules.
 
-### Consistent palette across languages
+### A consistent palette
 
 Java, Rust, Go, Scala, Clojure, Julia, Ruby, Kotlin, Swift and Python were compared
-role by role against the Dart and C# baseline, then aligned:
+role by role against the Dart and C# baseline, then aligned. Two roles are now
+identical everywhere:
 
-* method and function names read the same in every language
-* `class`, `struct`, `interface`, `enum`, `record`, `fun`, `func` and `defrecord`
-  share one declaration colour
-* annotations, attributes and decorators share one colour, from `@Override` to
-  `#[derive]` to `^:const`
-* imports, namespaces, constants and enum members each got a consistent colour
+* declaration keywords: `class`, `struct`, `interface`, `enum`, `record`, `fun`,
+  `func`, `defrecord`
+* annotations, attributes and decorators: `@Override`, `#[derive]`, `@dataclass`,
+  `^:const`
+
+Types, functions, imports and namespaces line up across most languages. A few
+deliberately still differ: TypeScript colors a bare call and a method call
+differently, Rust's `use` keeps the keyword color because its scope is shared with
+`pub` and `impl`, and constants vary because no two grammars agree on what one is.
+
+The three competing oranges in the theme (`#E6844F`, `#ec6c45`, `#fb8c00`) were
+reduced to one.
 
 ### Grammar injections
 
@@ -33,12 +40,13 @@ different things, which puts the result out of reach of any theme rule. Twenty t
 injections under `syntaxes/` fill those gaps. Some examples:
 
 * Dart marks the outer type and its type arguments identically, so
-  `CommandHandler<Command, Result>` was one flat colour
+  `CommandHandler<Command, Result>` was one flat color
 * SwiftUI gives `VStack` and the label `alignment:` the same scope
 * PowerShell has no rule for `enum` whatsoever, so the whole block was plain text
 * Python returns `title = models.CharField(...)` as a single unscoped token
 * Go leaves package qualifiers, member access and struct keys unscoped
 * SQL leaves table names after `FROM` and `JOIN` unscoped
+* Clojure and Julia leave the name after `defrecord` and `struct` unscoped
 
 ### Comments
 
@@ -46,6 +54,13 @@ Comment prose moved from `#707C74` to `#555f5f`. Markup nested inside doc commen
 (XML docs, JSDoc, Javadoc, PHPDoc, dartdoc) is blended 20% toward the background,
 so a documentation block no longer outshines the code beneath it. The same tokens
 keep full strength outside comments.
+
+### Editor chrome
+
+* the file explorer and activity bar sit below the editor instead of level with it
+* `dart.closingLabels` is set to 50% alpha, so the `// Widget` labels the Dart
+  extension draws at the end of a block stop competing with the code. It previously
+  inherited `tab.inactiveForeground`, which is full editor foreground
 
 ### Test samples
 
@@ -64,6 +79,6 @@ They are excluded from the published package via `.vscodeignore`.
 
 - Publish the first version [#7](https://github.com/coolbeatz71/coolest-dark/pull/7)
 
-## 0.0.1 | January 16, 2021
+## 0.0.2 | January 16, 2021
 
 - Update the tab and activity foreground colors [#14](https://github.com/coolbeatz71/coolest-dark/pull/14)
