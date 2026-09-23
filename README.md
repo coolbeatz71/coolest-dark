@@ -8,56 +8,56 @@ consistently across all of them.
 
 Declaration keywords (`class`, `struct`, `interface`, `enum`, `func`, `fun`,
 `defrecord`) and annotations (`@Override`, `#[derive]`, `@dataclass`, `^:const`)
-use the same colour in every language that has them. Types, functions and imports
+use the same color in every language that has them. Types, functions and imports
 line up across most languages too, with a few deliberate exceptions where a grammar
 makes the distinction impossible or where the language reads better its own way.
 
-### Screenshots
+## Screenshots
 
-#### Overview
+### Overview
 
 ![overview](https://github.com/coolbeatz71/coolest-dark/raw/master/img/code-sample.png)
 
-#### Flutter and Dart
+### Flutter and Dart
 
 ![flutter](https://github.com/coolbeatz71/coolest-dark/raw/master/img/code-flutter.png)
 
-#### Java
+### Java
 
 ![java](https://github.com/coolbeatz71/coolest-dark/raw/master/img/code-java.png)
 
-#### React
+### React
 
 ![react](https://github.com/coolbeatz71/coolest-dark/raw/master/img/code-react.png)
 
-#### HTML
+### HTML
 
 ![html](https://github.com/coolbeatz71/coolest-dark/raw/master/img/code-html.png)
 
-#### Stylesheets, CSS and SCSS
+### Stylesheets, CSS and SCSS
 
 ![css](https://github.com/coolbeatz71/coolest-dark/raw/master/img/code-css.png)
 
-### What makes it different
+## What makes it different
 
-Most themes stop at colouring the scopes a grammar happens to provide. Many
+Most themes stop at coloring the scopes a grammar happens to provide. Many
 grammars give a token no scope at all, or reuse one scope for two very different
 things, and the result is a language that looks flat no matter which theme you
 pick. Coolest Dark ships 22 grammar injections to close those gaps, so things like
 Flutter named arguments, SwiftUI modifiers, Go struct keys, SQL table names and
-PowerShell enums are actually reachable and coloured.
+PowerShell enums are actually reachable and colored.
 
 Documentation comments are deliberately pushed back. Prose sits well below the
 code, and markup nested inside a doc block (XML docs, JSDoc, Javadoc, PHPDoc,
 dartdoc) is blended toward the background so a long comment never shouts louder
 than the code under it.
 
-### To install
+## To install
 
-- Search for "Coolest Dark" in the VS Code marketplace, then set it as your colour theme.
-- The font in the screenshots is ["cascadia code"](https://github.com/microsoft/cascadia-code/releases).
+- Search for "Coolest Dark" in the VS Code marketplace, then set it as your color theme.
+- The font in the screenshots is ["Cascadia Code"](https://github.com/microsoft/cascadia-code/releases).
 
-### To contribute
+## To contribute
 
 Open an [issue](https://github.com/coolbeatz71/coolest-dark/issues) or a
 [pull request](https://github.com/coolbeatz71/coolest-dark).
