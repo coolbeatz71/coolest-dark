@@ -20,7 +20,7 @@
         "flutter", "dark", "coolest", "dart", "theme", "material theme", "One dark", "Bear Theme"
     ],
     "description": "The coolest dark theme for Dart and Flutter based on One Dark Pro and Bear Theme",
-    "version": "0.1.65",
+    "version": "0.1.66",
     "engines": {
         "vscode": "^1.75.0"
     },
