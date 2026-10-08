@@ -1,0 +1,64 @@
+{
+  "scopeName": "rust.members.injection",
+  "injectionSelector": "L:source.rust -comment -string",
+  "patterns": [
+    {
+      "include": "#struct-field"
+    },
+    {
+      "include": "#let-binding"
+    },
+    {
+      "include": "#member-access"
+    }
+  ],
+  "repository": {
+    "struct-field": {
+      "comment": "Struct field declarations (store: RwLock<...>, pub title: String) are unscoped by Rust's grammar.",
+      "match": "^\\s*((?:pub(?:\\s*\\([^)]*\\))?\\s+)?)([a-z_][A-Za-z0-9_]*)\\s*(?=:(?!:))",
+      "captures": {
+        "1": {
+          "patterns": [
+            {
+              "match": "pub",
+              "name": "keyword.other.rust"
+            }
+          ]
+        },
+        "2": {
+          "name": "variable.other.declaration.rust"
+        }
+      }
+    },
+    "let-binding": {
+      "comment": "let bindings leave the bound name unscoped. Two fixed-width lookbehinds so `mut` is never consumed and keeps its own storage.modifier.mut.rust scope.",
+      "patterns": [
+        {
+          "match": "(?<=\\blet )(?!mut\\b)([a-z_][A-Za-z0-9_]*)",
+          "captures": {
+            "1": {
+              "name": "variable.other.declaration.rust"
+            }
+          }
+        },
+        {
+          "match": "(?<=\\bmut )([a-z_][A-Za-z0-9_]*)",
+          "captures": {
+            "1": {
+              "name": "variable.other.declaration.rust"
+            }
+          }
+        }
+      ]
+    },
+    "member-access": {
+      "comment": "Field access after a dot (state.store, self.store) - methods are excluded, they are followed by '(' and already scoped entity.name.function.rust.",
+      "match": "(?<=\\.)([a-z_][A-Za-z0-9_]*)\\b(?!\\s*\\()",
+      "captures": {
+        "1": {
+          "name": "variable.other.member.rust"
+        }
+      }
+    }
+  }
+}

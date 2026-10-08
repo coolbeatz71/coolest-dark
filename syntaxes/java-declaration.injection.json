@@ -1,0 +1,36 @@
+{
+  "scopeName": "java.declaration-keywords.injection",
+  "injectionSelector": "L:source.java -comment -string",
+  "patterns": [
+    {
+      "include": "#declaration-keyword"
+    },
+    {
+      "include": "#field-type"
+    }
+  ],
+  "repository": {
+    "declaration-keyword": {
+      "comment": "Java's grammar lumps class/interface/enum under storage.modifier.java together with public, private, static, final and abstract, so the theme cannot colour the declaration keyword without recolouring every modifier. Match only the form `keyword TypeName` so modifiers are untouched. `record` is excluded by the grammar from storage.modifier entirely, so it is matched here too.",
+      "match": "(?<![.\\w$])\\b(class|interface|enum|record)\\b(?=\\s+[A-Za-z_$])",
+      "name": "keyword.declaration.java"
+    },
+    "field-type": {
+      "comment": "Java gives every type reference the same scope (storage.type.java), so an interface cannot be told from a class. Position is reachable: a capitalised type after access modifiers and directly before a lowercase field name. Generic types (Map<K,V>) are deliberately excluded - matching them would break the host grammar's field-declaration context and strip storage.type.generic.java from the type arguments.",
+      "match": "^\\s*((?:(?:private|protected|public|final|static|volatile|transient)\\s+)+)([A-Z][A-Za-z0-9_]*)(?=\\s+[a-z_])",
+      "captures": {
+        "1": {
+          "patterns": [
+            {
+              "match": "[A-Za-z]+",
+              "name": "storage.modifier.java"
+            }
+          ]
+        },
+        "2": {
+          "name": "entity.name.type.field.java"
+        }
+      }
+    }
+  }
+}

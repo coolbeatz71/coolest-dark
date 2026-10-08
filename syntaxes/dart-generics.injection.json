@@ -1,0 +1,78 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "scopeName": "dart.generics.injection",
+  "injectionSelector": "L:source.dart -comment -string",
+  "patterns": [
+    {
+      "include": "#type-arguments"
+    },
+    {
+      "include": "#named-arguments"
+    },
+    {
+      "include": "#property-access"
+    }
+  ],
+  "repository": {
+    "type-arguments": {
+      "comment": "Dart's grammar scopes every type name as support.class.dart, so a theme cannot tell CommandHandler apart from the arguments in CommandHandler<A, B>. This injection re-scopes the contents of a type-argument list as support.class.generic.dart so they can be coloured on their own. Handles up to three levels of nesting; the character class rules out comparison expressions.",
+      "match": "(?<=[A-Za-z0-9_$>])(<)([^<>;{}=&|!+\\-*/%\\n]*(?:<[^<>;{}=&|!+\\-*/%\\n]*(?:<[^<>;{}=&|!+\\-*/%\\n]*>[^<>;{}=&|!+\\-*/%\\n]*)*>[^<>;{}=&|!+\\-*/%\\n]*)*)(>)",
+      "captures": {
+        "1": {
+          "name": "punctuation.definition.typeparameters.begin.dart"
+        },
+        "2": {
+          "patterns": [
+            {
+              "match": "\\b(extends|super|covariant)\\b",
+              "name": "keyword.control.dart"
+            },
+            {
+              "match": "[_$A-Za-z][_$A-Za-z0-9]*",
+              "name": "support.class.generic.dart"
+            }
+          ]
+        },
+        "3": {
+          "name": "punctuation.definition.typeparameters.end.dart"
+        }
+      }
+    },
+    "named-arguments": {
+      "comment": "Dart's grammar gives named arguments (Flutter widget properties like width:, child:) no scope of their own. Tag just the name, never the value. Two forms: the name alone on its line (formatted Flutter), and the name right after ( or , on one line.",
+      "patterns": [
+        {
+          "match": "^\\s*([_$a-z][_$A-Za-z0-9]*)\\s*(:)(?!:)",
+          "captures": {
+            "1": {
+              "name": "variable.parameter.named.dart"
+            },
+            "2": {
+              "name": "punctuation.separator.named-argument.dart"
+            }
+          }
+        },
+        {
+          "match": "(?<=[(,])\\s*([_$a-z][_$A-Za-z0-9]*)\\s*(:)(?!:)",
+          "captures": {
+            "1": {
+              "name": "variable.parameter.named.dart"
+            },
+            "2": {
+              "name": "punctuation.separator.named-argument.dart"
+            }
+          }
+        }
+      ]
+    },
+    "property-access": {
+      "comment": "Dart's grammar leaves the segments of a property chain (context.sizing.s80) completely unscoped, so they fall through to the editor foreground. Tag each segment after a dot, but not method calls - those are followed by '(' and the host grammar already scopes them entity.name.function.dart.",
+      "match": "(?<=\\.)([_$a-zA-Z][_$A-Za-z0-9]*)\\b(?!\\s*\\()",
+      "captures": {
+        "1": {
+          "name": "variable.other.property.dart"
+        }
+      }
+    }
+  }
+}

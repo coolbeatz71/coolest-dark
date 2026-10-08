@@ -1,0 +1,26 @@
+{
+  "scopeName": "csharp.initializer-values.injection",
+  "injectionSelector": "L:source.cs -comment -string",
+  "patterns": [
+    {
+      "include": "#initializer-value"
+    }
+  ],
+  "repository": {
+    "initializer-value": {
+      "comment": "C# scopes both sides of an object initializer entry as variable.other.readwrite, so the value cannot be themed apart from the property it is assigned to. Match the entry shape instead: a PascalCase property, '=', then a plain identifier, closed by ',' or '}'. A statement ends in ';' and a lambda uses '=>', so neither matches, and true/false/null stay constants.",
+      "match": "^(\\s*)([A-Z_][A-Za-z0-9_]*)(\\s*)(=)(?![=>])(\\s*)(?!(?:true|false|null|this|base|new|default|value|nameof)\\b)([a-z_][A-Za-z0-9_]*)(?=\\s*[,}]|\\s*$)",
+      "captures": {
+        "2": {
+          "name": "variable.other.readwrite.cs"
+        },
+        "4": {
+          "name": "keyword.operator.assignment.cs"
+        },
+        "6": {
+          "name": "variable.other.initializer.value.cs"
+        }
+      }
+    }
+  }
+}

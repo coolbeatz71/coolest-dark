@@ -1,0 +1,38 @@
+{
+  "scopeName": "sql.tables.injection",
+  "injectionSelector": "L:source.sql -comment -string",
+  "patterns": [
+    {
+      "include": "#table-after-keyword"
+    },
+    {
+      "include": "#index-target"
+    }
+  ],
+  "repository": {
+    "table-after-keyword": {
+      "comment": "The SQL grammar leaves table names after FROM/JOIN/INTO/UPDATE unscoped, and at CREATE TABLE gives them entity.name.function.sql - the same scope as index, view and function names. Match the keyword phrase plus the name so only real table references are tagged. Compound keywords (INSERT INTO, INNER JOIN, CREATE TABLE) must be listed because the host grammar emits them as one token. Capture 1 keeps a keyword scope, which resolves to the colour the host already gave it.",
+      "match": "(?i)\\b((?:INSERT\\s+INTO|DELETE\\s+FROM|CREATE\\s+(?:TEMP(?:ORARY)?\\s+)?TABLE|ALTER\\s+TABLE|DROP\\s+TABLE(?:\\s+IF\\s+EXISTS)?|TRUNCATE(?:\\s+TABLE)?|(?:INNER|LEFT|RIGHT|FULL|CROSS)(?:\\s+OUTER)?\\s+JOIN|JOIN|FROM|INTO|UPDATE|REFERENCES))\\s+((?:(?:[A-Za-z_][A-Za-z0-9_]*|\\\"[^\\\"]+\\\")\\s*\\.\\s*)?(?:[A-Za-z_][A-Za-z0-9_]*|\\\"[^\\\"]+\\\"))",
+      "captures": {
+        "1": {
+          "name": "keyword.other.sql"
+        },
+        "2": {
+          "name": "entity.name.type.table.sql"
+        }
+      }
+    },
+    "index-target": {
+      "comment": "CREATE INDEX x ON table (...) - 'ON' plus a name plus an open paren is an index target, unlike 'ON a.b = c.d' in a join condition.",
+      "match": "(?i)\\b(ON)\\s+((?:(?:[A-Za-z_][A-Za-z0-9_]*|\\\"[^\\\"]+\\\")\\s*\\.\\s*)?(?:[A-Za-z_][A-Za-z0-9_]*|\\\"[^\\\"]+\\\"))(?=\\s*\\()",
+      "captures": {
+        "1": {
+          "name": "keyword.other.sql"
+        },
+        "2": {
+          "name": "entity.name.type.table.sql"
+        }
+      }
+    }
+  }
+}

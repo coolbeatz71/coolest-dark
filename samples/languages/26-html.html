@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!--
+  HTML language tour.
+  Covers semantic elements, forms, tables, media, ARIA,
+  data attributes, inline SVG, templates and embedded CSS/JS.
+-->
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coolest Dark &mdash; HTML tour</title>
+
+  <style>
+    /* Embedded stylesheet */
+    :root { --fg: #bcb28d; --bg: #1f2335; }
+    .log__entry[data-severity="error"] { color: #e03c8a; font-weight: 700; }
+  </style>
+</head>
+
+<body class="page page--dark">
+  <header class="masthead" role="banner">
+    <h1 id="title">Log viewer</h1>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="#entries" rel="noopener">Entries</a></li>
+        <li><a href="mailto:dev@example.com">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="entries">
+    <!-- A form with validation attributes -->
+    <form action="/search" method="get" novalidate>
+      <fieldset>
+        <legend>Filter</legend>
+        <label for="q">Query</label>
+        <input id="q" name="q" type="search" placeholder="message&hellip;" required
+               minlength="2" maxlength="64" autocomplete="off" />
+
+        <label for="severity">Severity</label>
+        <select id="severity" name="severity" multiple size="3">
+          <option value="debug">Debug</option>
+          <option value="error" selected>Error</option>
+        </select>
+
+        <button type="submit" class="btn btn--primary" disabled>Search</button>
+      </fieldset>
+    </form>
+
+    <table>
+      <caption>Recent entries</caption>
+      <thead>
+        <tr><th scope="col">Message</th><th scope="col">Severity</th></tr>
+      </thead>
+      <tbody>
+        <tr class="log__entry" data-severity="error" data-id="42">
+          <td>Something broke</td>
+          <td><abbr title="error">ERR</abbr></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <figure>
+      <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2" />
+      </svg>
+      <figcaption>Status &amp; health</figcaption>
+    </figure>
+
+    <template id="row-template">
+      <tr><td class="message"></td><td class="severity"></td></tr>
+    </template>
+  </main>
+
+  <script type="module">
+    // Embedded script
+    const rows = document.querySelectorAll('[data-severity="error"]');
+    rows.forEach((row) => row.setAttribute('aria-live', 'polite'));
+  </script>
+</body>
+</html>
