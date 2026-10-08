@@ -1,0 +1,62 @@
+{
+  "scopeName": "kotlin.arguments.injection",
+  "injectionSelector": "L:source.kotlin -comment -string -meta.import -meta.package",
+  "patterns": [
+    {
+      "include": "#named-arguments"
+    },
+    {
+      "include": "#property-access"
+    },
+    {
+      "include": "#object-reference"
+    }
+  ],
+  "repository": {
+    "named-arguments": {
+      "comment": "Kotlin named arguments (state = ..., onLike = ..., modifier = ...) get no scope at all, which is why Compose reads so pale next to Flutter. Dart's equivalent is variable.parameter.named.dart. Two forms: the name alone on its line, and the name right after ( or , on one line.",
+      "patterns": [
+        {
+          "match": "^\\s*([a-z_][A-Za-z0-9_]*)\\s*(=)(?![=>])",
+          "captures": {
+            "1": {
+              "name": "variable.parameter.named.kotlin"
+            },
+            "2": {
+              "name": "keyword.operator.assignment.kotlin"
+            }
+          }
+        },
+        {
+          "match": "(?<=[(,])\\s*([a-z_][A-Za-z0-9_]*)\\s*(=)(?![=>])",
+          "captures": {
+            "1": {
+              "name": "variable.parameter.named.kotlin"
+            },
+            "2": {
+              "name": "keyword.operator.assignment.kotlin"
+            }
+          }
+        }
+      ]
+    },
+    "property-access": {
+      "comment": "Kotlin leaves the segments of a property chain unscoped, same as Dart does. Method calls are excluded - they are followed by '(' and already scoped entity.name.function.call.kotlin.",
+      "match": "(?<=\\.)([a-zA-Z_][A-Za-z0-9_]*)\\b(?!\\s*\\()",
+      "captures": {
+        "1": {
+          "name": "variable.other.property.kotlin"
+        }
+      }
+    },
+    "object-reference": {
+      "comment": "The head of a property chain (MaterialTheme.shapes, TextOverflow.Ellipsis, Alignment.CenterVertically) is left unscoped by the Kotlin grammar. Kotlin convention capitalises objects and types, so a capitalised identifier directly before a dot is a type/object reference - Flutter's equivalent is support.class.dart.",
+      "match": "\\b([A-Z][A-Za-z0-9_]*)(?=\\.)",
+      "captures": {
+        "1": {
+          "name": "entity.name.type.object-ref.kotlin"
+        }
+      }
+    }
+  }
+}

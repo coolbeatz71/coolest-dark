@@ -1,0 +1,78 @@
+{
+  "scopeName": "julia.types.injection",
+  "injectionSelector": "L:source.julia -comment -string",
+  "patterns": [
+    {
+      "include": "#module-name"
+    },
+    {
+      "include": "#struct-name"
+    },
+    {
+      "include": "#abstract-primitive"
+    },
+    {
+      "include": "#enum-members"
+    }
+  ],
+  "repository": {
+    "module-name": {
+      "comment": "`module Foo` is Java's `package foo;` - the grammar leaves the name unscoped.",
+      "match": "\\b(module|baremodule)\\s+([A-Za-z_][A-Za-z0-9_!]*)",
+      "captures": {
+        "1": {
+          "name": "keyword.other.julia"
+        },
+        "2": {
+          "name": "entity.name.namespace.julia"
+        }
+      }
+    },
+    "struct-name": {
+      "comment": "The grammar labels a struct's name entity.name.function.julia - the same scope it gives real functions - so a theme cannot tell `struct LogEntry` from `function handle`. Re-tag it as a type.",
+      "match": "\\b(mutable\\s+struct|struct)\\s+([A-Za-z_][A-Za-z0-9_!]*)",
+      "captures": {
+        "1": {
+          "name": "keyword.other.julia"
+        },
+        "2": {
+          "name": "entity.name.type.julia"
+        }
+      }
+    },
+    "abstract-primitive": {
+      "match": "\\b(abstract\\s+type|primitive\\s+type)\\s+([A-Za-z_][A-Za-z0-9_!]*)",
+      "captures": {
+        "1": {
+          "name": "keyword.other.julia"
+        },
+        "2": {
+          "name": "entity.name.type.julia"
+        }
+      }
+    },
+    "enum-members": {
+      "comment": "@enum Severity DEBUG = 1 INFO = 2 - the member names get no scope at all.",
+      "begin": "(@enum)\\s+([A-Za-z_][A-Za-z0-9_!]*)",
+      "beginCaptures": {
+        "1": {
+          "name": "support.function.macro.julia"
+        },
+        "2": {
+          "name": "entity.name.type.julia"
+        }
+      },
+      "end": "$",
+      "patterns": [
+        {
+          "match": "\\b([A-Z][A-Za-z0-9_]*)\\b",
+          "name": "constant.other.enummember.julia"
+        },
+        {
+          "match": "\\b\\d+\\b",
+          "name": "constant.numeric.julia"
+        }
+      ]
+    }
+  }
+}

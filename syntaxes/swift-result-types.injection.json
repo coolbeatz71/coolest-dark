@@ -1,0 +1,11 @@
+{
+  "scopeName": "swift.result-types.injection",
+  "injectionSelector": "L:source.swift meta.function-result -comment -string",
+  "patterns": [
+    {
+      "comment": "Same as the parameter clause, for the type after '->'. meta.function-result covers the return type only, so every capitalised name inside it is part of that type.",
+      "match": "\\b[A-Z][A-Za-z0-9_]*\\b",
+      "name": "entity.name.type.result.swift"
+    }
+  ]
+}

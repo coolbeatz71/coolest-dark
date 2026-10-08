@@ -1,0 +1,62 @@
+{
+  "scopeName": "clojure.types.injection",
+  "injectionSelector": "L:source.clojure -comment -string",
+  "patterns": [
+    {
+      "include": "#metadata"
+    },
+    {
+      "include": "#ns-form"
+    },
+    {
+      "include": "#type-definition"
+    },
+    {
+      "include": "#import-keywords"
+    },
+    {
+      "include": "#clojure-keyword"
+    }
+  ],
+  "repository": {
+    "type-definition": {
+      "comment": "defrecord/defprotocol/deftype are scoped keyword.control by the host, but the NAME that follows is left unscoped. Tag both so they read like Java's `record`/`interface` plus its type name.",
+      "match": "(?<=\\()(defrecord|defprotocol|deftype|definterface|defstruct)(\\s+)([A-Za-z_][A-Za-z0-9_*+!?<>=.'/-]*)",
+      "captures": {
+        "1": {
+          "name": "storage.modifier.declaration.clojure"
+        },
+        "3": {
+          "name": "entity.name.type.record.clojure"
+        }
+      }
+    },
+    "ns-form": {
+      "comment": "(ns foo.bar) is Java's `package foo.bar;` - keyword plus a muted identifier path.",
+      "match": "(?<=\\()(ns)(\\s+)([A-Za-z_][A-Za-z0-9_*+!?<>=.'/-]*)",
+      "captures": {
+        "1": {
+          "name": "keyword.other.import.clojure"
+        },
+        "3": {
+          "name": "entity.name.namespace.clojure"
+        }
+      }
+    },
+    "import-keywords": {
+      "comment": ":require / :import / :as behave like Java's import keyword.",
+      "match": ":(?:require|import|refer|refer-clojure|use|as|only|exclude|rename|load)\\b",
+      "name": "keyword.other.import.clojure"
+    },
+    "clojure-keyword": {
+      "comment": "Clojure keywords (:debug, :info) are the closest thing to enum constants, and the host grammar gives them no scope at all.",
+      "match": ":{1,2}[A-Za-z_][A-Za-z0-9_*+!?<>=.'/-]*",
+      "name": "constant.other.keyword.clojure"
+    },
+    "metadata": {
+      "comment": "^:const and ^String metadata is Clojure's annotation syntax.",
+      "match": "\\^:?[A-Za-z_][A-Za-z0-9_*+!?<>=.'/-]*",
+      "name": "storage.modifier.metadata.clojure"
+    }
+  }
+}

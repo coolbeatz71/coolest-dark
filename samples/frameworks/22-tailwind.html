@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!--
+  Tailwind CSS framework tour.
+  Covers utility classes, responsive prefixes, state variants,
+  dark mode, arbitrary values, group/peer and container queries.
+-->
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tailwind tour</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen bg-slate-50 font-sans antialiased dark:bg-[#1f2335] dark:text-[#bcb28d]">
+
+  <header class="sticky top-0 z-50 border-b border-slate-200/60 backdrop-blur-sm dark:border-white/10">
+    <nav class="mx-auto flex max-w-5xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
+      <a href="#" class="text-lg font-semibold tracking-tight hover:text-orange-500 focus-visible:outline-2">
+        Coolest&nbsp;Dark
+      </a>
+
+      <ul class="hidden items-center gap-6 text-sm md:flex">
+        <li><a class="transition-colors hover:text-orange-400" href="#cards">Cards</a></li>
+        <li><a class="transition-colors hover:text-orange-400" href="#form">Form</a></li>
+      </ul>
+
+      <button
+        type="button"
+        class="rounded-md bg-orange-500 px-3 py-1.5 text-sm font-medium text-white shadow-sm
+               transition hover:bg-orange-600 focus:outline-none focus-visible:ring-2
+               focus-visible:ring-orange-400 focus-visible:ring-offset-2 disabled:opacity-50"
+      >
+        Sign in
+      </button>
+    </nav>
+  </header>
+
+  <main id="cards" class="mx-auto max-w-5xl px-4 py-10 sm:px-6 lg:px-8">
+    <!-- Responsive grid with arbitrary values -->
+    <section class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 2xl:gap-6">
+
+      <article class="group relative overflow-hidden rounded-xl border border-slate-200 bg-white p-5
+                      shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg
+                      dark:border-white/10 dark:bg-white/5">
+        <h2 class="line-clamp-2 text-base font-semibold group-hover:text-orange-500">
+          Something broke in production
+        </h2>
+
+        <p class="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+          A short description that truncates after a couple of lines.
+        </p>
+
+        <div class="mt-4 flex items-center justify-between text-xs">
+          <span class="inline-flex items-center rounded-full bg-rose-100 px-2 py-0.5 font-medium
+                       text-rose-700 ring-1 ring-inset ring-rose-600/20 dark:bg-rose-500/10 dark:text-rose-400">
+            error
+          </span>
+          <time datetime="2026-10-04" class="tabular-nums text-slate-500">04 Oct</time>
+        </div>
+      </article>
+
+    </section>
+
+    <form id="form" class="mt-12 space-y-4">
+      <div class="relative">
+        <input
+          id="q" type="search" placeholder=" "
+          class="peer w-full rounded-lg border border-slate-300 bg-transparent px-3 pb-2 pt-5 text-sm
+                 placeholder-transparent focus:border-orange-500 focus:outline-none
+                 dark:border-white/15"
+        />
+        <label for="q"
+          class="pointer-events-none absolute left-3 top-1.5 text-xs text-slate-500 transition-all
+                 peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-sm
+                 peer-focus:top-1.5 peer-focus:text-xs peer-focus:text-orange-500">
+          Search messages
+        </label>
+      </div>
+    </form>
+  </main>
+</body>
+</html>

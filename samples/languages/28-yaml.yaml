@@ -1,0 +1,71 @@
+# =============================================================
+# YAML language tour
+#
+# Covers scalars, sequences, mappings, anchors, aliases, merge keys,
+# multi-line blocks, tags, documents and quoting styles.
+# =============================================================
+---
+apiVersion: v1          # inline comment
+kind: Config
+metadata:
+  name: coolest-dark
+  labels: { app: logviewer, tier: backend }
+  annotations:
+    description: >
+      Folded block scalar: newlines become spaces,
+      useful for long prose descriptions.
+    startup: |
+      Literal block scalar: newlines preserved.
+        indented line two
+      line three
+
+# Anchors and aliases
+defaults: &defaults
+  retries: 3
+  timeout: 30s
+  severity: &default_severity info
+
+development:
+  <<: *defaults
+  debug: true
+  severity: debug
+
+production:
+  <<: *defaults
+  debug: false
+  replicas: 5
+  severity: *default_severity
+
+severities:
+  - name: debug
+    rank: 1
+    severe: false
+  - name: error
+    rank: 4
+    severe: true
+
+scalars:
+  plain: hello world
+  single: 'it''s quoted'
+  double: "tab\there, newline\nthere"
+  integer: 42
+  float: 3.14159
+  octal: 0o755
+  hex: 0xFF
+  boolean_true: true
+  boolean_false: no
+  null_value: ~
+  explicit_null: null
+  date: 2026-10-04
+  timestamp: 2026-10-04T12:30:00Z
+  typed: !!str 12345
+  empty_list: []
+  empty_map: {}
+
+---
+# A second document in the same file
+kind: Policy
+rules:
+  - apiGroups: [""]
+    resources: ["pods", "services"]
+    verbs: ["get", "list", "watch"]

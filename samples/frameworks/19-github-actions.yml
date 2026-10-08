@@ -1,0 +1,111 @@
+# =============================================================
+# GitHub Actions framework tour
+#
+# Covers triggers, matrices, jobs, steps, conditionals, caching,
+# secrets, outputs, reusable workflows and concurrency.
+# =============================================================
+
+name: CI
+
+on:
+  push:
+    branches: [main, develop]
+    paths-ignore: ["**.md", "docs/**"]
+  pull_request:
+    types: [opened, synchronize, reopened]
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: Target environment
+        required: true
+        default: staging
+        type: choice
+        options: [staging, production]
+  schedule:
+    - cron: "0 3 * * 1"   # every Monday at 03:00 UTC
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  NODE_VERSION: "22"
+  CI: "true"
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  test:
+    name: Test on ${{ matrix.os }} / node ${{ matrix.node }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        node: ["20", "22"]
+        include:
+          - os: ubuntu-latest
+            node: "22"
+            coverage: true
+
+    outputs:
+      version: ${{ steps.meta.outputs.version }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+
+      - name: Cache build output
+        uses: actions/cache@v4
+        with:
+          path: |
+            .next/cache
+            node_modules/.cache
+          key: ${{ runner.os }}-build-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: ${{ runner.os }}-build-
+
+      - name: Install
+        run: npm ci --no-audit --no-fund
+
+      - id: meta
+        name: Read version
+        shell: bash
+        run: |
+          # inline comment
+          version="$(node -p "require('./package.json').version")"
+          echo "version=${version}" >> "$GITHUB_OUTPUT"
+
+      - name: Test
+        run: npm test -- --reporter=verbose
+        env:
+          API_TOKEN: ${{ secrets.API_TOKEN }}
+
+      - name: Upload coverage
+        if: matrix.coverage && success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-${{ matrix.os }}
+          path: coverage/
+          retention-days: 7
+
+  publish:
+    needs: [test]
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: https://marketplace.visualstudio.com/
+    steps:
+      - run: echo "Publishing v${{ needs.test.outputs.version }}"

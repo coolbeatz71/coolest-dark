@@ -1,0 +1,86 @@
+{
+  "scopeName": "kotlin.generics.injection",
+  "injectionSelector": "L:source.kotlin -comment -string",
+  "patterns": [
+    {
+      "include": "#fun-type-params"
+    },
+    {
+      "include": "#type-args"
+    }
+  ],
+  "repository": {
+    "type-args": {
+      "comment": "Kotlin's grammar scopes a type argument exactly like the type that owns it, so <TCommand, TResult> cannot be themed apart from CommandHandler. Re-scope the argument list only. Bounded to one line; '<' must hug the identifier, which comparisons do not.",
+      "begin": "(?<=[A-Za-z0-9_?>`])(<)(?![\\s=<])",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.bracket.angle.kotlin"
+        }
+      },
+      "end": "(>)|(?=[;{}]|$)",
+      "endCaptures": {
+        "1": {
+          "name": "punctuation.bracket.angle.kotlin"
+        }
+      },
+      "patterns": [
+        {
+          "include": "#type-args"
+        },
+        {
+          "match": "->",
+          "name": "storage.type.function.arrow.kotlin"
+        },
+        {
+          "match": "\\b(in|out|reified|suspend|vararg|crossinline|noinline)\\b",
+          "name": "storage.modifier.other.kotlin"
+        },
+        {
+          "match": "\\*",
+          "name": "keyword.operator.star-projection.kotlin"
+        },
+        {
+          "match": "\\b([A-Za-z_][A-Za-z0-9_]*)\\b",
+          "name": "entity.name.type.generic.kotlin"
+        }
+      ]
+    },
+    "fun-type-params": {
+      "comment": "Kotlin writes a function's own type parameters before its name (fun <T> wrap), so no identifier hugs the '<' for #type-args to anchor on. Match that one position behind 'fun '.",
+      "begin": "(?<=\\bfun\\s)(<)(?![\\s=<])",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.bracket.angle.kotlin"
+        }
+      },
+      "end": "(>)|(?=[;{}]|$)",
+      "endCaptures": {
+        "1": {
+          "name": "punctuation.bracket.angle.kotlin"
+        }
+      },
+      "patterns": [
+        {
+          "include": "#type-args"
+        },
+        {
+          "match": "->",
+          "name": "storage.type.function.arrow.kotlin"
+        },
+        {
+          "match": "\\b(in|out|reified|suspend|vararg|crossinline|noinline)\\b",
+          "name": "storage.modifier.other.kotlin"
+        },
+        {
+          "match": "\\*",
+          "name": "keyword.operator.star-projection.kotlin"
+        },
+        {
+          "match": "\\b([A-Za-z_][A-Za-z0-9_]*)\\b",
+          "name": "entity.name.type.generic.kotlin"
+        }
+      ]
+    }
+  }
+}

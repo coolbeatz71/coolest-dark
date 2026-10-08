@@ -5,14 +5,14 @@
     "foreground": "#bcb28d",
     "selection.background": "#40c4ff",
     "descriptionForeground": "#bcb28d",
-		"errorForeground": "#E03C8A",
+		"errorForeground": "#e70b76",
 
     // terminal
     "terminal.ansiBlue": "#40c4ff",
     "terminal.ansiBrightBlue": "#40c4ff",
-    "terminal.ansiRed": "#E03C8A",
-    "terminal.ansiBrightRed": "#e6844f",
-    "terminal.ansiYellow": "#e6844f",
+    "terminal.ansiRed": "#e70b76",
+    "terminal.ansiBrightRed": "#ff813d",
+    "terminal.ansiYellow": "#ff813d",
     "terminal.ansiBrightYellow": "#657b83",
     "terminal.ansiGreen": "#24936e",
     "terminal.ansiBrightGreen": "#5c8490",
@@ -22,7 +22,7 @@
     "terminal.ansiBrightCyan": "#93a1a1",
     "terminal.ansiBlack": "#2c5a65",
     "terminal.ansiBrightBlack": "#666666",
-    "terminal.ansiMagenta": "#e03c8a",
+    "terminal.ansiMagenta": "#e70b76",
     "terminal.ansiBrightMagenta": "#646695",
     "terminal.foreground": "#bcb28d",
     "terminal.background": "#1F2335",
@@ -33,26 +33,26 @@
     "editor.background": "#1f2335",
     "editor.foreground": "#bcb28d",
     "editor.selectionBackground": "#2c5a65",
-    "editor.selectionHighlightBackground": "#2c5a65",
-    "editor.wordHighlightBackground": "#2c5a65",
+    "editor.selectionHighlightBackground": "#2c5a6580",
+    "editor.wordHighlightBackground": "#2c5a6580",
     "editorCursor.foreground": "#bcb28d",
     "editorGutter.background": "#1F2335",
-    "editorIndentGuide.background": "#2f3033",
+    "editorIndentGuide.background1": "#2f3033",
     "editorLineNumber.foreground": "#43474c",
     "editorLink.activeForeground": "#999",
     "editor.lineHighlightBackground": "#282b31",
     "editor.lineHighlightBorder": "#1F2335",
-    "editorWarning.foreground": "#e6844f",
-    "editorError.foreground": "#E03C8A",
-    "editor.findMatchHighlightBackground": "#2c5a65",
-    "editor.findRangeHighlightBackground": "#2c5a65",
-		"editor.findMatchBorder": "#bcb28d66",
+    "editorWarning.foreground": "#ff813d",
+    "editorError.foreground": "#e70b76",
+    "editor.findMatchBackground": "#2c5a65",
+    "editor.findRangeHighlightBackground": "#2c5a6533",
+    "editor.findMatchBorder": "#bcb28d",
 
     //sideBar
-    "sideBar.background": "#1F2335",
+    "sideBar.background": "#20232e",
     "sideBar.border": "#31333b",
     "sideBar.foreground": "#707C74",
-    "sideBarSectionHeader.background": "#1F2335",
+    "sideBarSectionHeader.background": "#161d3c",
     "sideBarSectionHeader.foreground": "#999",
     "sideBarTitle.foreground": "#999",
     "scrollbar.shadow": "#1F2335",
@@ -68,10 +68,10 @@
 
     // tab
     "tab.activeBackground": "#30395d",
-    "tab.activeForeground": "#ec6c45",
+    "tab.activeForeground": "#ff813d",
     "tab.inactiveBackground": "#2a2f44",
-    "tab.activeBorder": "#ec6c45",
-    "tab.inactiveForeground": "#bcb28d66",
+    "tab.activeBorder": "#ff813d",
+    "tab.inactiveForeground": "#bcb28d",
     "tab.hoverBackground": "#282b31",
     "tab.border": "#31333b",
 
@@ -79,11 +79,11 @@
     "panel.background": "#20253a",
 
     // activityBar
-    "activityBar.background": "#20253a",
+    "activityBar.background": "#141722",
     "activityBar.border": "#31333b",
-    "activityBar.foreground": "#ec6c45",
+    "activityBar.foreground": "#ff813d",
     "activityBarBadge.background": "#424852",
-    "activityBar.activeBorder": "#ec6c45",
+    "activityBar.activeBorder": "#ff813d",
     "activityBar.inactiveForeground": "#bcb28d",
 
     // titleBar
@@ -100,8 +100,8 @@
     "list.focusForeground": "#bcb28d",
     "list.inactiveSelectionBackground": "#243d46",
     "list.inactiveSelectionForeground": "#bcb28d",
-    "list.warningForeground": "#e6844f",
-    "list.errorForeground": "#E03C8A",
+    "list.warningForeground": "#ff813d",
+    "list.errorForeground": "#e70b76",
     "list.hoverForeground": "#bcb28d",
     "list.highlightForeground": "#93a1a1",
     "list.inactiveFocusBackground": "#243d46",
@@ -119,10 +119,14 @@
     "editorBracketMatch.border": "#886b67",
 
     // git
-    "gitDecoration.ignoredResourceForeground": "#505f55"
+    "gitDecoration.ignoredResourceForeground": "#505f55",
+
+    // dart / flutter
+    "dart.closingLabels": "#bcb28d80"
   },
 	"name": "Coolest Dark",
 	"type": "dark",
+
   "tokenColors": [
     {
       "scope": "emphasis",
@@ -145,7 +149,7 @@
     {
       "scope": "comment",
       "settings": {
-        "foreground": "#707C74",
+        "foreground": "#555f5f",
         "fontStyle": "italic"
       }
     },
@@ -170,19 +174,19 @@
     {
       "scope": "entity.name.tag",
       "settings": {
-        "foreground": "#E03C8A"
+        "foreground": "#e70b76"
       }
     },
     {
       "scope": "entity.name.tag.css",
       "settings": {
-        "foreground": "#E03C8A"
+        "foreground": "#e70b76"
       }
     },
     {
       "scope": "entity.other.attribute-name",
       "settings": {
-        "foreground": "#E6844F"
+        "foreground": "#ff813d"
       }
     },
     {
@@ -196,7 +200,7 @@
         "entity.other.attribute-name.scss"
       ],
       "settings": {
-        "foreground": "#E03C8A"
+        "foreground": "#e70b76"
       }
     },
     {
@@ -231,7 +235,7 @@
       "scope": "markup.heading",
       "settings": {
         "fontStyle": "bold",
-        "foreground": "#E03C8A"
+        "foreground": "#e70b76"
       }
     },
     {
@@ -273,7 +277,7 @@
     {
       "scope": "markup.inline.raw",
       "settings": {
-        "foreground": "#E6844F"
+        "foreground": "#ff813d"
       }
     },
     {
@@ -323,7 +327,7 @@
     {
       "scope": "storage.type",
       "settings": {
-        "foreground": "#E03C8A"
+        "foreground": "#e70b76"
       }
     },
     {
@@ -377,13 +381,13 @@
         "variable.other.less"
       ],
       "settings": {
-        "foreground": "#E6844F"
+        "foreground": "#ff813d"
       }
     },
     {
       "scope": "keyword",
       "settings": {
-        "foreground": "#E03C8A"
+        "foreground": "#e70b76"
       }
     },
     {
@@ -405,7 +409,7 @@
     {
       "scope": "keyword.other.unit",
       "settings": {
-        "foreground": "#E03C8A"
+        "foreground": "#e70b76"
       }
     },
     {
@@ -430,7 +434,35 @@
       }
     },
     {
-      "scope": "keyword.other.import.dart",
+      "name": "import / package / use keywords",
+      "scope": [
+        "keyword.other.import.dart",
+        "keyword.other.import.java",
+        "keyword.other.package.java",
+        "keyword.other.import.groovy",
+        "keyword.other.package.groovy",
+        "keyword.control.import.js",
+        "keyword.control.import.ts",
+        "keyword.control.import.jsx",
+        "keyword.control.import.tsx",
+        "keyword.control.export.js",
+        "keyword.control.export.ts",
+        "keyword.control.from.js",
+        "keyword.control.from.ts",
+        "keyword.control.import.python",
+        "keyword.control.import.from.python",
+        "keyword.control.import.include.php",
+        "keyword.control.import.require.php",
+        "keyword.other.use.php",
+        "keyword.other.namespace.php",
+        "keyword.other.using.cs",
+        "keyword.other.namespace.cs",
+        "keyword.control.at-rule.import.css",
+        "keyword.control.at-rule.import.scss",
+        "keyword.control.at-rule.use.scss",
+        "keyword.control.at-rule.forward.scss",
+        "keyword.control.at-rule.import.less"
+      ],
       "settings": {
         "foreground": "#ff4081"
       }
@@ -451,7 +483,7 @@
       "name": "this.self",
       "scope": "variable.language",
       "settings": {
-        "foreground": "#E03C8A",
+        "foreground": "#e70b76",
         "fontStyle": "italic"
       }
     },
@@ -463,7 +495,200 @@
         "support.constant.handlebars"
       ],
       "settings": {
+        "foreground": "#07d3ea"
+      }
+    },
+    {
+      "name": "JSX / TSX attribute names  (articleId={...})",
+      "scope": [
+        "entity.other.attribute-name.tsx",
+        "entity.other.attribute-name.jsx",
+        "entity.other.attribute-name.js.jsx"
+      ],
+      "settings": {
         "foreground": "#ce7dfd"
+      }
+    },
+    {
+      "name": "JS / TS / JSX property access  (article.commentCount)",
+      "scope": [
+        "variable.other.property.tsx",
+        "variable.other.property.ts",
+        "variable.other.property.jsx",
+        "variable.other.property.js"
+      ],
+      "settings": {
+        "foreground": "#04e3d5"
+      }
+    },
+    // ---- Kotlin and Rust aligned to the Java palette ---------------
+    {
+      "name": "Kotlin / Rust annotations and attributes  (@Serializable, #[derive])",
+      "scope": [
+        "entity.name.type.annotation.kotlin",
+        "entity.name.type.annotation-site.kotlin",
+        "meta.attribute.rust",
+        "meta.attribute.rust entity.name.type",
+        "meta.attribute.rust punctuation.definition.attribute"
+      ],
+      "settings": {
+        "foreground": "#00e676",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "name": "Kotlin / Rust declaration keywords  (class, object, struct, trait, impl)",
+      "scope": [
+        "keyword.hard.class.kotlin",
+        "keyword.hard.object.kotlin",
+        "keyword.hard.typealias.kotlin",
+        "storage.type.rust"
+      ],
+      "settings": {
+        "foreground": "#ff2b72",
+        "fontStyle": "italic bold"
+      }
+    },
+    {
+      "name": "Kotlin / Rust import and package keywords",
+      "scope": [
+        "keyword.hard.package.kotlin",
+        "meta.import.kotlin keyword.soft.kotlin",
+        "meta.import.rust keyword.other"
+      ],
+      "settings": {
+        "foreground": "#ff4081"
+      }
+    },
+    {
+      "name": "C# object initializer values  (Id = id)",
+      "scope": [
+        "variable.other.initializer.value.cs"
+      ],
+      "settings": {
+        "foreground": "#18cdc3"
+      }
+    },
+    {
+      "name": "C# parameter types  (IAuthRepository authRepository)",
+      "scope": [
+        "entity.name.type.parameter.cs"
+      ],
+      "settings": {
+        "foreground": "#f848de"
+      }
+    },
+    {
+      "name": "Swift parameter types  (_ command: ChangePasswordCommand)",
+      "scope": [
+        "entity.name.type.parameter.swift"
+      ],
+      "settings": {
+        "foreground": "#f848de"
+      }
+    },
+    {
+      "name": "Swift return types  (-> ChangePasswordResult)",
+      "scope": [
+        "entity.name.type.result.swift"
+      ],
+      "settings": {
+        "foreground": "#ce7dfd"
+      }
+    },
+    {
+      "name": "Kotlin type arguments  <TCommand, TResult>",
+      "scope": [
+        "entity.name.type.generic.kotlin"
+      ],
+      "settings": {
+        "foreground": "#ce7dfd"
+      }
+    },
+    {
+      "name": "Elixir nested module segments  (LanguageTour.Server)",
+      "scope": [
+        "entity.name.type.module.nested.elixir"
+      ],
+      "settings": {
+        "foreground": "#f848de"
+      }
+    },
+    {
+      "name": "Rust type arguments  <TCommand, TResult>",
+      "scope": [
+        "entity.name.type.generic.rust"
+      ],
+      "settings": {
+        "foreground": "#18b4db"
+      }
+    },
+    {
+      "name": "Rust module paths  (std::collections)",
+      "scope": [
+        "entity.name.namespace.rust",
+        "entity.name.module.rust"
+      ],
+      "settings": {
+        "foreground": "#d4d4d4"
+      }
+    },
+    {
+      "name": "Rust enum variants  (Ok, Err, Some, None)",
+      "scope": [
+        "entity.name.type.result.rust",
+        "entity.name.type.option.rust"
+      ],
+      "settings": {
+        "foreground": "#DDA52D"
+      }
+    },
+    {
+      "name": "Rust lifetimes  ('a)",
+      "scope": [
+        "entity.name.type.lifetime.rust"
+      ],
+      "settings": {
+        "foreground": "#986DB2",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "name": "Rust primitive types  (i32, usize, bool)",
+      "scope": [
+        "entity.name.type.primitive.rust",
+        "entity.name.type.numeric.rust"
+      ],
+      "settings": {
+        "foreground": "#40c4ff"
+      }
+    },
+    // ----------------------------------------------------------------
+    {
+      "name": "Dart method names and calls",
+      "scope": [
+        "entity.name.function.dart"
+      ],
+      "settings": {
+        "foreground": "#ce7dfd"
+      }
+    },
+    {
+      "name": "C# method names",
+      "scope": [
+        "entity.name.function.cs"
+      ],
+      "settings": {
+        "foreground": "#ce7dfd"
+      }
+    },
+    {
+      "name": "Dart property access  (context.sizing.s80)",
+      "scope": [
+        "variable.other.property.dart"
+      ],
+      "settings": {
+        "foreground": "#f848de"
       }
     },
     {
@@ -474,26 +699,50 @@
         "entity.name.type",
         "entity.name.class",
         "storage.type.cs",
-        "storage.type.generic.cs",
+
         "storage.type.modifier.cs",
         "storage.type.variable.cs",
         "storage.type.annotation.java",
-        "storage.type.generic.java",
-        "storage.type.java",
         "storage.type.object.array.java",
         "storage.type.primitive.array.java",
         "storage.type.primitive.java",
         "storage.type.token.java",
-        "storage.type.groovy",
         "storage.type.annotation.groovy",
-        "storage.type.parameters.groovy",
-        "storage.type.generic.groovy",
         "storage.type.object.array.groovy",
         "storage.type.primitive.array.groovy",
         "storage.type.primitive.groovy"
       ],
       "settings": {
         "foreground": "#40c4ff"
+      }
+    },
+    {
+      "name": "generic type arguments  <TCommand, TResult>",
+      "scope": [
+        "storage.type.generic.java",
+        "storage.type.generic.wildcard.java",
+        "storage.type.generic.groovy",
+        "storage.type.parameters.groovy",
+        "meta.type.parameters.ts entity.name.type",
+        "meta.type.parameters.tsx entity.name.type",
+        "meta.type.parameters.ts support.class",
+        "meta.type.parameters.ts support.type",
+        "meta.type.parameters.ts entity.other.inherited-class"
+      ],
+      "settings": {
+        "foreground": "#18b4db"
+      }
+    },
+    {
+      "name": "Java / Groovy class type references (CompletableFuture, Map, String...)",
+      "scope": [
+        "storage.type.java",
+        "entity.name.type.class.java",
+        "storage.type.groovy",
+        "entity.name.type.class.groovy"
+      ],
+      "settings": {
+        "foreground": "#ff813d"
       }
     },
     {
@@ -538,19 +787,30 @@
       }
     },
     {
-      "name": "Object keys, TS grammar specific",
+      "name": "Object literal keys  (id:, categoryId:, title:)",
       "scope": [
         "meta.object-literal.key",
         "meta.object-literal.key entity.name.function"
       ],
       "settings": {
-        "foreground": "#E6844F"
+        "foreground": "#ce7dfd"
+      }
+    },
+    {
+      "name": "JSON property names",
+      "scope": [
+        "support.type.property-name.json",
+        "support.type.property-name.jsonc",
+        "meta.structure.dictionary.json support.type.property-name"
+      ],
+      "settings": {
+        "foreground": "#ff813d"
       }
     },
     {
       "scope": [
         "entity.other.attribute-name",
-        "meta.tag.attributes",
+        "meta.tag.attributes"
       ],
       "settings": {
         "foreground": "#fb8c00"
@@ -580,21 +840,72 @@
         "keyword.operator.arithmetic"
       ],
       "settings": {
-        "foreground": "#E6844F"
+        "foreground": "#ff813d"
       }
 		},
 		{
-      "scope": ["support.class.dart"],
+      "name": "class / type references",
+      "scope": [
+        "support.class",
+        "support.class.dart",
+        "support.class.java",
+        "support.class.groovy",
+        "support.class.js",
+        "support.class.ts",
+        "support.class.jsx",
+        "support.class.tsx",
+        "support.class.builtin.js",
+        "support.class.error.js",
+        "support.class.python",
+        "support.class.builtin.python",
+        "support.class.php",
+        "support.class.builtin.php",
+        "support.class.cs"
+      ],
       "settings": {
-        "foreground": "#ec6c45"
+        "foreground": "#ff813d"
       }
 		},
 		{
-			"name": "class",
-      "scope": ["keyword.declaration.dart"],
+      "name": "Dart type arguments  <ChangePasswordCommand, ChangePasswordResult>",
+      "scope": [
+        "support.class.generic.dart"
+      ],
       "settings": {
-				"foreground": "#ff2b72",
-				"fontStyle": "italic bold",
+        "foreground": "#40c4ff"
+      }
+    },
+    {
+      "name": "Dart named arguments / widget properties (width:, child:)",
+      "scope": [
+        "variable.parameter.named.dart"
+      ],
+      "settings": {
+        "foreground": "#18cdc3"
+      }
+    },
+    {
+      "name": "class declaration keyword",
+      "scope": [
+        "keyword.declaration",
+        "keyword.declaration.dart",
+        "keyword.declaration.class.dart",
+        "storage.type.class.python",
+        "storage.type.class.js",
+        "storage.type.class.ts",
+        "storage.type.class.jsx",
+        "storage.type.class.tsx",
+        "storage.type.class.php",
+        "storage.type.class.cs",
+        "storage.type.class.java",
+        "storage.type.class.groovy",
+        "keyword.other.class.java",
+        "keyword.other.class.groovy",
+        "keyword.other.class.cs"
+      ],
+      "settings": {
+        "foreground": "#ff2b72",
+        "fontStyle": "italic bold"
       }
     },
     {
@@ -680,27 +991,42 @@
         "variable.language.special.self.python"
       ],
       "settings": {
-        "foreground": "#E6844F"
+        "foreground": "#ff813d"
       }
     },
     {
       "scope": [
         "storage.type.function.python",
-        "storage.type.class.python",
         "keyword.control.flow.python"
       ],
       "settings": {
-        "foreground": "#E03C8A"
+        "foreground": "#e70b76"
       }
 		},
 		{
-			"name": "@override",
+      "name": "annotations / decorators (@override)",
       "scope": [
-        "storage.type.annotation.dart"
+        "storage.type.annotation",
+        "storage.type.annotation.dart",
+        "storage.type.annotation.java",
+        "punctuation.definition.annotation.java",
+        "storage.type.annotation.groovy",
+        "punctuation.definition.annotation.groovy",
+        "entity.name.function.decorator.python",
+        "punctuation.definition.decorator.python",
+        "entity.name.function.decorator.ts",
+        "entity.name.function.decorator.tsx",
+        "entity.name.function.decorator.js",
+        "punctuation.decorator.ts",
+        "punctuation.decorator.tsx",
+        "punctuation.decorator.js",
+        "storage.type.attribute.cs",
+        "support.attribute.php",
+        "punctuation.definition.attribute.php"
       ],
       "settings": {
-				"foreground": "#00e676",
-				"fontStyle": "italic",
+        "foreground": "#00e676",
+        "fontStyle": "italic"
       }
     },
     {
@@ -726,7 +1052,7 @@
     {
       "scope": ["string.quoted.docstring.multi.python"],
       "settings": {
-        "foreground": "#707C74"
+        "foreground": "#586261"
       }
     },
     {
@@ -737,7 +1063,718 @@
       "settings": {
         "foreground": "#66A866"
       }
+    },
+
+    // ----------------------------------------------------------------
+    // Inside a comment only (C#/VB XML docs, JSDoc, Javadoc, PHPDoc,
+    // dartdoc): each token keeps its hue but is blended 20% toward the
+    // editor background. Descendant selectors, so the same tokens stay
+    // at full strength outside comments.
+    // ----------------------------------------------------------------
+    {
+      "name": "doc comment: tag names (<summary>, @param, @returns)",
+      "scope": [
+        "comment entity.name.tag",
+        "comment meta.tag",
+        "comment keyword",
+        "comment keyword.other.documentation",
+        "comment storage.type.class.jsdoc",
+        "comment punctuation.definition.block.tag"
+      ],
+      "settings": {
+        "foreground": "#b93779",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "name": "doc comment: tag brackets",
+      "scope": [
+        "comment punctuation.definition.tag"
+      ],
+      "settings": {
+        "foreground": "#6d6d71",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "name": "doc comment: attribute names (name=, cref=)",
+      "scope": [
+        "comment entity.other.attribute-name",
+        "comment variable",
+        "comment variable.other"
+      ],
+      "settings": {
+        "foreground": "#cf770b",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "name": "doc comment: strings, types and constants",
+      "scope": [
+        "comment string",
+        "comment constant",
+        "comment entity.name.type",
+        "comment support.type",
+        "comment support.class",
+        "comment storage.type",
+        "comment entity.name.function"
+      ],
+      "settings": {
+        "foreground": "#588d5c",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "name": "Scala declared type names only  (object LanguageTour, enum Severity)",
+      "scope": [
+        "source.scala entity.name.class.declaration",
+        "source.scala entity.name.type.declaration"
+      ],
+      "settings": {
+        "foreground": "#ff813d"
+      }
+    },
+    {
+      "name": "SQL table names",
+      "scope": [
+        "entity.name.type.table.sql"
+      ],
+      "settings": {
+        "foreground": "#ff813d"
+      }
+    },
+    {
+      "name": "PowerShell enum declaration keyword",
+      "scope": [
+        "keyword.declaration.enum.powershell"
+      ],
+      "settings": {
+        "foreground": "#ff2b72",
+        "fontStyle": "italic bold"
+      }
+    },
+    {
+      "name": "PowerShell enum type name",
+      "scope": [
+        "entity.name.type.enum.powershell"
+      ],
+      "settings": {
+        "foreground": "#ff813d"
+      }
+    },
+    {
+      "name": "PowerShell enum members",
+      "scope": [
+        "variable.other.enummember.powershell"
+      ],
+      "settings": {
+        "foreground": "#fb8c00"
+      }
+    },
+    {
+      "name": "Clojure record / protocol / type names",
+      "scope": [
+        "entity.name.type.record.clojure"
+      ],
+      "settings": {
+        "foreground": "#ff813d"
+      }
+    },
+    {
+      "name": "Clojure declaration forms  (defrecord, defprotocol)",
+      "scope": [
+        "storage.modifier.declaration.clojure"
+      ],
+      "settings": {
+        "foreground": "#00aeff"
+      }
+    },
+    {
+      "name": "Clojure ns / require keywords",
+      "scope": [
+        "keyword.other.import.clojure"
+      ],
+      "settings": {
+        "foreground": "#ff4081"
+      }
+    },
+    {
+      "name": "Clojure namespace identifiers",
+      "scope": [
+        "entity.name.namespace.clojure"
+      ],
+      "settings": {
+        "foreground": "#d4d4d4"
+      }
+    },
+    {
+      "name": "Clojure keywords  (:debug, :info)",
+      "scope": [
+        "constant.other.keyword.clojure"
+      ],
+      "settings": {
+        "foreground": "#DDA52D"
+      }
+    },
+    {
+      "name": "Clojure metadata  (^:const)",
+      "scope": [
+        "storage.modifier.metadata.clojure"
+      ],
+      "settings": {
+        "foreground": "#00e676",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "name": "Julia type names  (String, Severity, LogEntry)",
+      "scope": [
+        "support.type.julia",
+        "entity.name.type.julia"
+      ],
+      "settings": {
+        "foreground": "#ff813d"
+      }
+    },
+    {
+      "name": "Julia declaration keywords  (module, struct, function)",
+      "scope": [
+        "keyword.other.julia"
+      ],
+      "settings": {
+        "foreground": "#00aeff"
+      }
+    },
+    {
+      "name": "Julia namespace identifiers",
+      "scope": [
+        "entity.name.namespace.julia"
+      ],
+      "settings": {
+        "foreground": "#d4d4d4"
+      }
+    },
+    {
+      "name": "Julia import / export keywords",
+      "scope": [
+        "keyword.control.export.julia",
+        "keyword.control.import.julia",
+        "keyword.control.using.julia"
+      ],
+      "settings": {
+        "foreground": "#ff4081"
+      }
+    },
+    {
+      "name": "Julia macros  (@enum, @inline)",
+      "scope": [
+        "support.function.macro.julia"
+      ],
+      "settings": {
+        "foreground": "#00e676",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "name": "Julia enum members",
+      "scope": [
+        "constant.other.enummember.julia"
+      ],
+      "settings": {
+        "foreground": "#DDA52D"
+      }
+    },
+    {
+      "name": "Lua function keyword",
+      "scope": [
+        "keyword.declaration.function.lua"
+      ],
+      "settings": {
+        "foreground": "#ce7dfd"
+      }
+    },
+    {
+      "name": "Groovy method calls  (.findAll, .values())",
+      "scope": [
+        "entity.name.function.call.groovy"
+      ],
+      "settings": {
+        "foreground": "#ce7dfd"
+      }
+    },
+    {
+      "name": "C# interface declarations  (interface IRepository<T>)",
+      "scope": [
+        "entity.name.type.interface.cs"
+      ],
+      "settings": {
+        "foreground": "#04e3d5"
+      }
+    },
+    {
+      "name": "Java method names  (match Dart and C#)",
+      "scope": [
+        "entity.name.function.java"
+      ],
+      "settings": {
+        "foreground": "#ce7dfd"
+      }
+    },
+    {
+      "name": "Java declaration keywords  (class, interface, enum, record)",
+      "scope": [
+        "keyword.declaration.java"
+      ],
+      "settings": {
+        "foreground": "#ff2b72"
+      }
+    },
+    {
+      "name": "Rust function and macro names  (match Dart, C#, Java)",
+      "scope": [
+        "entity.name.function.rust",
+        "entity.name.function.macro.rust"
+      ],
+      "settings": {
+        "foreground": "#ce7dfd"
+      }
+    },
+    {
+      "name": "Rust variables and bindings  (plain, like Dart)",
+      "scope": [
+        "variable.other.rust"
+      ],
+      "settings": {
+        "foreground": "#bcb28d"
+      }
+    },
+    {
+      "name": "Go function names  (match Dart, C#, Java)",
+      "scope": [
+        "entity.name.function.go",
+        "entity.name.function.support.go",
+        "entity.name.function.support.builtin.go"
+      ],
+      "settings": {
+        "foreground": "#ce7dfd"
+      }
+    },
+    {
+      "name": "Go declaration keywords  (type, struct, interface, func)",
+      "scope": [
+        "keyword.type.go",
+        "keyword.struct.go",
+        "keyword.interface.go",
+        "keyword.function.go"
+      ],
+      "settings": {
+        "foreground": "#ff2b72"
+      }
+    },
+    {
+      "name": "Go modifiers  (const, var)",
+      "scope": [
+        "keyword.const.go",
+        "keyword.var.go"
+      ],
+      "settings": {
+        "foreground": "#00aeff"
+      }
+    },
+    {
+      "name": "Go package keyword and identifier",
+      "scope": [
+        "keyword.package.go"
+      ],
+      "settings": {
+        "foreground": "#ff4081"
+      }
+    },
+    {
+      "name": "Go package name",
+      "scope": [
+        "entity.name.type.package.go"
+      ],
+      "settings": {
+        "foreground": "#d4d4d4"
+      }
+    },
+    {
+      "name": "Go constants and enum members  (Debug, Info, ErrNotFound)",
+      "scope": [
+        "variable.other.constant.go"
+      ],
+      "settings": {
+        "foreground": "#DDA52D"
+      }
+    },
+    {
+      "name": "Go variable names  (article, err, ok)",
+      "scope": [
+        "variable.other.assignment.go",
+        "variable.other.declaration.go",
+        "variable.other.go"
+      ],
+      "settings": {
+        "foreground": "#ff813d"
+      }
+    },
+    {
+      "name": "Kotlin named arguments  (match Flutter)",
+      "scope": [
+        "variable.parameter.named.kotlin"
+      ],
+      "settings": {
+        "foreground": "#ff813d"
+      }
+    },
+    {
+      "name": "Kotlin property access  (match Flutter)",
+      "scope": [
+        "variable.other.property.kotlin"
+      ],
+      "settings": {
+        "foreground": "#f848de"
+      }
+    },
+    {
+      "name": "Kotlin function names  (match Dart)",
+      "scope": [
+        "entity.name.function.declaration.kotlin",
+        "entity.name.function.call.kotlin",
+        "entity.name.function.reference.kotlin"
+      ],
+      "settings": {
+        "foreground": "#ce7dfd"
+      }
+    },
+    {
+      "name": "Kotlin fun keyword  (declaration keyword)",
+      "scope": [
+        "keyword.hard.fun.kotlin"
+      ],
+      "settings": {
+        "foreground": "#ff2b72"
+      }
+    },
+    {
+      "name": "Kotlin val / var modifiers",
+      "scope": [
+        "keyword.hard.kotlin"
+      ],
+      "settings": {
+        "foreground": "#00aeff"
+      }
+    },
+    {
+      "name": "Kotlin package and import identifiers",
+      "scope": [
+        "meta.import.kotlin",
+        "meta.package.kotlin",
+        "entity.name.package.kotlin"
+      ],
+      "settings": {
+        "foreground": "#d4d4d4"
+      }
+    },
+    {
+      "name": "Kotlin object / type references  (MaterialTheme., TextOverflow.)",
+      "scope": [
+        "entity.name.type.object-ref.kotlin"
+      ],
+      "settings": {
+        "foreground": "#18cdc3"
+      }
+    },
+    {
+      "name": "Swift argument labels  (alignment:, spacing:)",
+      "scope": [
+        "variable.parameter.label.swift"
+      ],
+      "settings": {
+        "foreground": "#ff813d"
+      }
+    },
+    {
+      "name": "Swift object / type references  (Color., Task.)",
+      "scope": [
+        "entity.name.type.object-ref.swift"
+      ],
+      "settings": {
+        "foreground": "#18cdc3"
+      }
+    },
+    {
+      "name": "Swift function and view calls  (match Dart, Kotlin)",
+      "scope": [
+        "support.function.any-method.swift",
+        "entity.name.function.swift"
+      ],
+      "settings": {
+        "foreground": "#ce7dfd"
+      }
+    },
+    {
+      "name": "Swift property access and enum shorthand  (.leading, .secondary)",
+      "scope": [
+        "variable.other.swift"
+      ],
+      "settings": {
+        "foreground": "#f848de"
+      }
+    },
+    {
+      "name": "Swift declaration keywords  (struct, class, protocol, func)",
+      "scope": [
+        "storage.type.struct.swift",
+        "storage.type.class.swift",
+        "storage.type.protocol.swift",
+        "storage.type.enum.swift",
+        "storage.type.extension.swift",
+        "storage.type.function.swift"
+      ],
+      "settings": {
+        "foreground": "#ff2b72"
+      }
+    },
+    {
+      "name": "Swift attributes  (@State, @Published)",
+      "scope": [
+        "punctuation.definition.attribute.swift"
+      ],
+      "settings": {
+        "foreground": "#00e676",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "name": "Swift var / let specifiers",
+      "scope": [
+        "keyword.other.declaration-specifier.swift"
+      ],
+      "settings": {
+        "foreground": "#00aeff"
+      }
+    },
+    {
+      "name": "SwiftUI modifiers  (.padding, .font, .background)",
+      "scope": [
+        "entity.name.function.modifier.swift"
+      ],
+      "settings": {
+        "foreground": "#ff813d"
+      }
+    },
+    {
+      "name": "Ruby declaration keywords  (class, def, module)",
+      "scope": [
+        "keyword.control.class.ruby",
+        "keyword.control.def.ruby",
+        "keyword.control.module.ruby"
+      ],
+      "settings": {
+        "foreground": "#ff2b72"
+      }
+    },
+    {
+      "name": "Ruby method names  (match C#)",
+      "scope": [
+        "entity.name.function.ruby"
+      ],
+      "settings": {
+        "foreground": "#ce7dfd"
+      }
+    },
+    {
+      "name": "Ruby symbols  (:published, :recent)",
+      "scope": [
+        "constant.language.symbol.ruby",
+        "punctuation.definition.constant.ruby",
+        "constant.other.symbol.ruby"
+      ],
+      "settings": {
+        "foreground": "#DDA52D"
+      }
+    },
+    {
+      "name": "Ruby hash keys / keyword arguments  (published:, class_name:)",
+      "scope": [
+        "constant.language.symbol.hashkey.ruby",
+        "constant.other.symbol.hashkey.ruby",
+        "punctuation.definition.constant.hashkey.ruby"
+      ],
+      "settings": {
+        "foreground": "#ff813d"
+      }
+    },
+    {
+      "name": "Ruby lambda arrow",
+      "scope": [
+        "support.function.kernel.ruby"
+      ],
+      "settings": {
+        "foreground": "#66A866"
+      }
+    },
+    {
+      "name": "Python function names and calls  (match C#)",
+      "scope": [
+        "entity.name.function.python",
+        "meta.function-call.generic.python",
+        "meta.function-call.python",
+        "support.function.builtin.python"
+      ],
+      "settings": {
+        "foreground": "#ce7dfd"
+      }
+    },
+    {
+      "name": "Python base classes  (models.Model, QuerySet)",
+      "scope": [
+        "entity.other.inherited-class.python"
+      ],
+      "settings": {
+        "foreground": "#ff813d"
+      }
+    },
+    {
+      "name": "Python module-level constants  (DEBUG, INFO, ERROR)",
+      "scope": [
+        "constant.other.caps.python"
+      ],
+      "settings": {
+        "foreground": "#DDA52D"
+      }
+    },
+    {
+      "name": "Python control flow  (return, yield, raise)",
+      "scope": [
+        "keyword.control.flow.python"
+      ],
+      "settings": {
+        "foreground": "#40c4ff"
+      }
+    },
+    {
+      "name": "Python brackets and argument punctuation",
+      "scope": [
+        "punctuation.definition.dict.begin.python",
+        "punctuation.definition.dict.end.python",
+        "punctuation.definition.list.begin.python",
+        "punctuation.definition.list.end.python",
+        "punctuation.definition.arguments.end.python"
+      ],
+      "settings": {
+        "foreground": "#bcb28d"
+      }
+    },
+    {
+      "name": "Python assignment targets  (title = models.CharField)",
+      "scope": [
+        "variable.other.assignment.python"
+      ],
+      "settings": {
+        "foreground": "#ff813d"
+      }
+    },
+    {
+      "name": "Go struct literal keys  (ID:, Title:)",
+      "scope": [
+        "variable.parameter.named.go"
+      ],
+      "settings": {
+        "foreground": "#ff813d"
+      }
+    },
+    {
+      "name": "Go method calls  (c.JSON, time.Now)",
+      "scope": [
+        "entity.name.function.call.go"
+      ],
+      "settings": {
+        "foreground": "#ce7dfd"
+      }
+    },
+    {
+      "name": "Go member access  (c.Request, http.StatusOK)",
+      "scope": [
+        "variable.other.member.go"
+      ],
+      "settings": {
+        "foreground": "#f848de"
+      }
+    },
+    {
+      "name": "Go package qualifiers and receivers  (slog., http., c.)",
+      "scope": [
+        "entity.name.namespace.ref.go"
+      ],
+      "settings": {
+        "foreground": "#18cdc3"
+      }
+    },
+    {
+      "name": "Java field declaration types  (private final ArticleRepository repository)",
+      "scope": [
+        "entity.name.type.field.java"
+      ],
+      "settings": {
+        "foreground": "#f848de"
+      }
+    },
+    {
+      "name": "TypeScript bare calls  (expect, describe, it)",
+      "scope": [
+        "entity.name.function.bare.ts"
+      ],
+      "settings": {
+        "foreground": "#ce7dfd"
+      }
+    },
+    {
+      "name": "Rust struct fields and let bindings  (store, title)",
+      "scope": [
+        "variable.other.declaration.rust"
+      ],
+      "settings": {
+        "foreground": "#ff813d"
+      }
+    },
+    {
+      "name": "Rust field access  (state.store, self.items)",
+      "scope": [
+        "variable.other.member.rust"
+      ],
+      "settings": {
+        "foreground": "#f848de"
+      }
+    },
+    {
+      "name": "Python base class qualifier  (admin. in admin.ModelAdmin)",
+      "scope": [
+        "entity.name.namespace.base.python"
+      ],
+      "settings": {
+        "foreground": "#f848de"
+      }
+    },
+    {
+      "name": "Python base class name  (ModelAdmin in admin.ModelAdmin)",
+      "scope": [
+        "entity.other.inherited-class.member.python"
+      ],
+      "settings": {
+        "foreground": "#18cdc3"
+      }
+    },
+    {
+      "name": "CSS custom properties  (--color-gray-100)",
+      "scope": [
+        "variable.css.custom-property"
+      ],
+      "settings": {
+        "foreground": "#f848de"
+      }
     }
   ]
 }
-

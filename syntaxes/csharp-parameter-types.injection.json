@@ -1,0 +1,52 @@
+{
+  "scopeName": "csharp.parameter-types.injection",
+  "injectionSelector": "L:source.cs -comment -string",
+  "patterns": [
+    {
+      "include": "#parameter-type"
+    }
+  ],
+  "repository": {
+    "parameter-type": {
+      "comment": "C# scopes every type as a flat entity.name.type with no meta context, so a parameter type cannot be themed apart from a return type, a base type or a local. Match the declaration shape instead: a PascalCase type followed by a camelCase name and then ',', ')' or the end of the line. A local ends in '=' or ';' and a call argument has no such pair, so neither matches. Built-in types stay keywords.",
+      "match": "\\b([A-Z][A-Za-z0-9_]*(?:\\.[A-Za-z_][A-Za-z0-9_]*)*(?:\\s*<[^()<>]*(?:<[^()<>]*>[^()<>]*)*>)?\\??(?:\\[\\s*,*\\s*\\])?)\\s+([a-z_][A-Za-z0-9_]*)(?=\\s*[,)]|\\s*$)",
+      "captures": {
+        "1": {
+          "patterns": [
+            {
+              "match": "[<>]",
+              "name": "punctuation.definition.typeparameters.cs"
+            },
+            {
+              "match": "\\?",
+              "name": "punctuation.separator.question-mark.cs"
+            },
+            {
+              "match": "\\[",
+              "name": "punctuation.squarebracket.open.cs"
+            },
+            {
+              "match": "\\]",
+              "name": "punctuation.squarebracket.close.cs"
+            },
+            {
+              "match": "\\.",
+              "name": "punctuation.accessor.cs"
+            },
+            {
+              "match": ",",
+              "name": "punctuation.separator.comma.cs"
+            },
+            {
+              "match": "\\b[A-Za-z_][A-Za-z0-9_]*\\b",
+              "name": "entity.name.type.parameter.cs"
+            }
+          ]
+        },
+        "2": {
+          "name": "entity.name.variable.parameter.cs"
+        }
+      }
+    }
+  }
+}
