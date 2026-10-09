@@ -1,11 +1,23 @@
 # CHANGELOG
 
+## 1.0.1 | October 9, 2026
+
+A pass over the selection, find and comment colors.
+
+* selection and word highlight moved from `#2c5a65` to `#1d3f49`. The two
+  highlight variants also went from 50% to 60% alpha
+* find match and its range highlight moved to the same `#1d3f49`, so a search
+  result and a selection now read as one family rather than two teals
+* comment prose moved from `#555f5f` to `#5a6563`, a touch lighter and warmer
+  against the `#1f2335` background
+
 ## 1.0.0 | September 22, 2026
 
 Coolest Dark was written for Dart and Flutter. Everything else fell through to a
 handful of generic rules, so most languages came out looking washed out, or in a
 few cases almost monochrome. This release widens the theme to 35 languages and 35
 frameworks, and adds the grammar work needed to make that possible.
+[#20](https://github.com/coolbeatz71/coolest-dark/pull/20)
 
 ### Coverage beyond Dart
 
@@ -73,12 +85,12 @@ They are excluded from the published package via `.vscodeignore`.
 * three trailing commas made the theme file invalid strict JSON
 * the minimum VS Code version moved from 1.52.0 to 1.75.0
 
+## 0.0.2 | January 16, 2021
+
+- Update the tab and activity foreground colors [#14](https://github.com/coolbeatz71/coolest-dark/pull/14)
+
 ## 0.0.1 | Dec 19, 2020
 
 - Create the syntax colors for Dart/Flutter support [#1](https://github.com/coolbeatz71/coolest-dark/pull/1)
 
 - Publish the first version [#7](https://github.com/coolbeatz71/coolest-dark/pull/7)
-
-## 0.0.2 | January 16, 2021
-
-- Update the tab and activity foreground colors [#14](https://github.com/coolbeatz71/coolest-dark/pull/14)
