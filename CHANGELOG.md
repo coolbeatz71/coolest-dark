@@ -1,5 +1,17 @@
 # CHANGELOG
 
+## 1.0.1 | October 9, 2026
+
+A pass over the selection, find and comment colors.
+
+* selection and word highlight moved from `#2c5a65` to `#1d3f49`. The two
+  highlight variants also went from 50% to 60% alpha
+* find match and its range highlight moved to the same `#1d3f49`, so a search
+  result and a selection now read as one family rather than two teals
+* comment prose moved from `#555f5f` to `#5a6563`, a touch lighter and warmer
+  against the `#1f2335` background
+* the Angular test sample is reformatted to match the rest of `samples/`
+
 ## 1.0.0 | September 22, 2026
 
 Coolest Dark was written for Dart and Flutter. Everything else fell through to a
