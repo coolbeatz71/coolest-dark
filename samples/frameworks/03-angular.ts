@@ -35,11 +35,13 @@ export class ArticleService {
    * @throws HttpErrorResponse when the request fails
    */
   findAll(limit = 20): Observable<Article[]> {
-    return this.http.get<Article[]>("/api/articles", { params: { limit } }).pipe(
-      map((articles) => articles.slice(0, limit)), // inline comment
-      catchError(() => of([])),
-      shareReplay({ bufferSize: 1, refCount: true }),
-    );
+    return this.http
+      .get<Article[]>("/api/articles", { params: { limit } })
+      .pipe(
+        map((articles) => articles.slice(0, limit)), // inline comment
+        catchError(() => of([])),
+        shareReplay({ bufferSize: 1, refCount: true }),
+      );
   }
 }
 
@@ -50,8 +52,12 @@ export class ArticleService {
   changeDetection: ChangeDetectionStrategy.OnPush,
   styles: [
     `
-      :host { display: block; }
-      .card--selected { outline: 2px solid var(--accent); }
+      :host {
+        display: block;
+      }
+      .card--selected {
+        outline: 2px solid var(--accent);
+      }
     `,
   ],
   template: `

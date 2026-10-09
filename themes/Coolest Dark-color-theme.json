@@ -32,9 +32,9 @@
     //editor
     "editor.background": "#1f2335",
     "editor.foreground": "#bcb28d",
-    "editor.selectionBackground": "#2c5a65",
-    "editor.selectionHighlightBackground": "#2c5a6580",
-    "editor.wordHighlightBackground": "#2c5a6580",
+    "editor.selectionBackground": "#1d3f49",
+    "editor.selectionHighlightBackground": "#1d3f4999",
+    "editor.wordHighlightBackground": "#1d3f4999",
     "editorCursor.foreground": "#bcb28d",
     "editorGutter.background": "#1F2335",
     "editorIndentGuide.background1": "#2f3033",
@@ -44,8 +44,8 @@
     "editor.lineHighlightBorder": "#1F2335",
     "editorWarning.foreground": "#ff813d",
     "editorError.foreground": "#e70b76",
-    "editor.findMatchBackground": "#2c5a65",
-    "editor.findRangeHighlightBackground": "#2c5a6533",
+    "editor.findMatchBackground": "#1d3f49",
+    "editor.findRangeHighlightBackground": "#1d3f4933",
     "editor.findMatchBorder": "#bcb28d",
 
     //sideBar
@@ -149,7 +149,7 @@
     {
       "scope": "comment",
       "settings": {
-        "foreground": "#555f5f",
+        "foreground": "#5a6563",
         "fontStyle": "italic"
       }
     },
