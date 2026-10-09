@@ -10,7 +10,6 @@ A pass over the selection, find and comment colors.
   result and a selection now read as one family rather than two teals
 * comment prose moved from `#555f5f` to `#5a6563`, a touch lighter and warmer
   against the `#1f2335` background
-* the Angular test sample is reformatted to match the rest of `samples/`
 
 ## 1.0.0 | September 22, 2026
 
@@ -85,12 +84,12 @@ They are excluded from the published package via `.vscodeignore`.
 * three trailing commas made the theme file invalid strict JSON
 * the minimum VS Code version moved from 1.52.0 to 1.75.0
 
+## 0.0.2 | January 16, 2021
+
+- Update the tab and activity foreground colors [#14](https://github.com/coolbeatz71/coolest-dark/pull/14)
+
 ## 0.0.1 | Dec 19, 2020
 
 - Create the syntax colors for Dart/Flutter support [#1](https://github.com/coolbeatz71/coolest-dark/pull/1)
 
 - Publish the first version [#7](https://github.com/coolbeatz71/coolest-dark/pull/7)
-
-## 0.0.2 | January 16, 2021
-
-- Update the tab and activity foreground colors [#14](https://github.com/coolbeatz71/coolest-dark/pull/14)
